@@ -1,0 +1,19 @@
+# Config with real values — never commit
+.env
+
+# Data — raw pulls and snapshots stay local (see data/README.md)
+data/*
+!data/README.md
+
+# Tableau
+*.hyper
+*.twbx
+*.bak
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# IDE
+.idea/

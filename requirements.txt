@@ -1,0 +1,7 @@
+pandas
+requests
+python-dotenv
+pyarrow
+statsmodels
+# ijson — streaming parser; needed once we parse the large AllPrices (90-day) file
+ijson
