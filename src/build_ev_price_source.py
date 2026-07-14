@@ -48,6 +48,8 @@ def main() -> int:
     ap.add_argument("--ev", help="Path to booster_ev.csv (default: data/processed/booster_ev.csv)")
     ap.add_argument("--sealed", help="Path to sealed_prices.csv (default: data/sealed_prices.csv)")
     ap.add_argument("--out", help="Output path (default: data/processed/ev_vs_price.csv)")
+    ap.add_argument("--slot-in", help="Path to booster_ev_by_slot.csv (default: data/processed/booster_ev_by_slot.csv)")
+    ap.add_argument("--slot-out", help="Enriched slot output (default: data/processed/ev_by_slot.csv)")
     args = ap.parse_args()
 
     ddir = data_dir()
@@ -125,6 +127,30 @@ def main() -> int:
         rr = result["ev_realizable"] / result["sealed_price_usd"]
         print(f"realizable EV/price — above 1.0: {(rr > 1).sum()}/{len(rr)} | "
               f"mean {rr.mean():.2f} | median {rr.median():.2f}")
+
+    # --- Enrich the slot file with per-set sealed price -------------------
+    # The slot decomposition (booster_ev_by_slot.csv) has no price column, so a
+    # realizable-ratio sort isn't computable there on its own. We left-join the
+    # single-play-booster sealed price per set so the slot worksheet can sort by
+    # the same key as the dumbbell. Realizable EV is still derived in Tableau as
+    # SUM(slot_ev_realizable_contribution); only the price is joined here. The
+    # ratio itself stays a Tableau calc (never a pre-computed column).
+    slot_in = Path(args.slot_in) if args.slot_in else ddir / "processed" / "booster_ev_by_slot.csv"
+    slot_out = Path(args.slot_out) if args.slot_out else ddir / "processed" / "ev_by_slot.csv"
+    if slot_in.exists():
+        slot = pd.read_csv(slot_in)
+        price_map = sealed_pb[["set_code", "tcgplayer_market_usd"]].rename(
+            columns={"tcgplayer_market_usd": "sealed_price_usd"})
+        before = len(slot)
+        slot = slot.merge(price_map, on="set_code", how="left")
+        assert len(slot) == before, "slot enrichment changed row count — check for duplicate set_codes in sealed"
+        slot["sealed_price_usd"] = slot["sealed_price_usd"].round(2)
+        slot_out.parent.mkdir(parents=True, exist_ok=True)
+        slot.to_csv(slot_out, index=False)
+        matched_sets = slot.loc[slot["sealed_price_usd"].notna(), "set_code"].nunique()
+        print(f"\nWrote {slot_out} ({len(slot)} rows, {matched_sets} sets carry a sealed price)")
+    else:
+        print(f"\n(slot file {slot_in} not found — skipped slot enrichment)")
     return 0
 
 

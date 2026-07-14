@@ -1,0 +1,2416 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20261.26.0410.0924                               -->
+<workbook original-version='18.1' source-build='2026.1.1 (20261.26.0410.0924)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <DashboardGridOverlay />
+    <_.fcp.IndividualControlFormatting.true...IndividualControlFormatting />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <WindowsPersistSimpleIdentifiers />
+    <WorksheetBackgroundTransparency />
+    <ZoneBackgroundTransparency />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+    <color-palette custom='true' name='MTG EV - Slots' type='regular'>
+      <color>#e8b04b</color>
+      <color>#4fc4d6</color>
+      <color>#e0885b</color>
+      <color>#9b8ce0</color>
+      <color>#5a6b7d</color>
+    </color-palette>
+  </preferences>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column alias='Realizable value ÷ price' caption='p.Sort By' datatype='integer' name='[Parameter 1]' param-domain-type='list' role='measure' type='quantitative' value='1'>
+        <calculation class='tableau' formula='1' />
+        <aliases>
+          <alias key='1' value='Realizable value ÷ price' />
+          <alias key='2' value='Nominal EV per pack' />
+        </aliases>
+        <members>
+          <member alias='Realizable value ÷ price' value='1' />
+          <member alias='Nominal EV per pack' value='2' />
+        </members>
+      </column>
+    </datasource>
+    <datasource caption='ev_vs_price' inline='true' name='federated.0vfrbo90tj5apo14qmujz1fccoec' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='ev_vs_price' name='textscan.1to80x200kash812em9ok01h2du5'>
+            <connection class='textscan' directory='../data/processed' filename='ev_vs_price.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.1to80x200kash812em9ok01h2du5' name='ev_vs_price.csv' table='[ev_vs_price#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='set_code' ordinal='0' />
+            <column datatype='string' name='set_name' ordinal='1' />
+            <column datatype='string' name='set_category' ordinal='2' />
+            <column datatype='date' name='release_date' ordinal='3' />
+            <column datatype='string' name='variant' ordinal='4' />
+            <column datatype='real' name='ev' ordinal='5' />
+            <column datatype='real' name='ev_realizable' ordinal='6' />
+            <column datatype='real' name='priced_coverage' ordinal='7' />
+            <column datatype='real' name='unpriced_weight_share' ordinal='8' />
+            <column datatype='real' name='bulk_threshold' ordinal='9' />
+            <column datatype='real' name='bulk_rate' ordinal='10' />
+            <column datatype='real' name='sealed_price_usd' ordinal='11' />
+            <column datatype='date' name='price_collected_date' ordinal='12' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[ev_vs_price.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>set_code</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[set_code]</local-name>
+            <parent-name>[ev_vs_price.csv]</parent-name>
+            <remote-alias>set_code</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[ev_vs_price.csv_04B632AC7E9D48669AAB54E542036AE0]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>set_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[set_name]</local-name>
+            <parent-name>[ev_vs_price.csv]</parent-name>
+            <remote-alias>set_name</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[ev_vs_price.csv_04B632AC7E9D48669AAB54E542036AE0]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>set_category</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[set_category]</local-name>
+            <parent-name>[ev_vs_price.csv]</parent-name>
+            <remote-alias>set_category</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[ev_vs_price.csv_04B632AC7E9D48669AAB54E542036AE0]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>release_date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[release_date]</local-name>
+            <parent-name>[ev_vs_price.csv]</parent-name>
+            <remote-alias>release_date</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ev_vs_price.csv_04B632AC7E9D48669AAB54E542036AE0]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>variant</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[variant]</local-name>
+            <parent-name>[ev_vs_price.csv]</parent-name>
+            <remote-alias>variant</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[ev_vs_price.csv_04B632AC7E9D48669AAB54E542036AE0]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ev</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[ev]</local-name>
+            <parent-name>[ev_vs_price.csv]</parent-name>
+            <remote-alias>ev</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ev_vs_price.csv_04B632AC7E9D48669AAB54E542036AE0]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ev_realizable</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[ev_realizable]</local-name>
+            <parent-name>[ev_vs_price.csv]</parent-name>
+            <remote-alias>ev_realizable</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ev_vs_price.csv_04B632AC7E9D48669AAB54E542036AE0]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>priced_coverage</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[priced_coverage]</local-name>
+            <parent-name>[ev_vs_price.csv]</parent-name>
+            <remote-alias>priced_coverage</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ev_vs_price.csv_04B632AC7E9D48669AAB54E542036AE0]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>unpriced_weight_share</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[unpriced_weight_share]</local-name>
+            <parent-name>[ev_vs_price.csv]</parent-name>
+            <remote-alias>unpriced_weight_share</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ev_vs_price.csv_04B632AC7E9D48669AAB54E542036AE0]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>bulk_threshold</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[bulk_threshold]</local-name>
+            <parent-name>[ev_vs_price.csv]</parent-name>
+            <remote-alias>bulk_threshold</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ev_vs_price.csv_04B632AC7E9D48669AAB54E542036AE0]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>bulk_rate</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[bulk_rate]</local-name>
+            <parent-name>[ev_vs_price.csv]</parent-name>
+            <remote-alias>bulk_rate</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ev_vs_price.csv_04B632AC7E9D48669AAB54E542036AE0]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sealed_price_usd</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[sealed_price_usd]</local-name>
+            <parent-name>[ev_vs_price.csv]</parent-name>
+            <remote-alias>sealed_price_usd</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ev_vs_price.csv_04B632AC7E9D48669AAB54E542036AE0]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>price_collected_date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[price_collected_date]</local-name>
+            <parent-name>[ev_vs_price.csv]</parent-name>
+            <remote-alias>price_collected_date</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ev_vs_price.csv_04B632AC7E9D48669AAB54E542036AE0]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='EV / Price (Nominal)' datatype='real' default-format='*0.00&quot;×&quot;' name='[Calculation_0858190739009536]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[ev] / [sealed_price_usd]' />
+      </column>
+      <column caption='EV / Price (Realizable)' datatype='real' default-format='*0.00&quot;×&quot;' name='[Calculation_0858190739124225]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[ev_realizable] / [sealed_price_usd]' />
+      </column>
+      <column caption='Value Verdict' datatype='string' name='[Calculation_0858190739177474]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [ev_realizable] &gt;= [sealed_price_usd] &#13;&#10;    THEN &quot;Realizable EV ≥ Price&quot; &#13;&#10;    ELSE &quot;Price exceeds Realizable EV&quot; &#13;&#10;END' />
+      </column>
+      <column caption='Median Realizable Ratio' datatype='real' default-format='*0.00&quot;×&quot;' name='[Calculation_1856547897282560]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='MEDIAN([Calculation_0858190739124225])' />
+      </column>
+      <column caption='Sets Above Price (Realizable)' datatype='integer' default-format='n#,##0;-#,##0' name='[Calculation_1856547897389057]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM(&#13;&#10;    IF [ev_realizable] &gt;= [sealed_price_usd] &#13;&#10;        THEN 1 &#13;&#10;    ELSE 0 &#13;&#10;    END&#13;&#10;)' />
+      </column>
+      <column caption='Total Sets' datatype='integer' default-format='n#,##0;-#,##0' name='[Calculation_1856547897581570]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNTD([set_code])' />
+      </column>
+      <column caption='Median Nominal Ratio' datatype='real' default-format='*0.00&quot;×&quot;' name='[Calculation_1856547897630723]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='MEDIAN([Calculation_0858190739009536])' />
+      </column>
+      <column caption='Dumbbell Sort Key' datatype='real' name='[Calculation_2257594405146624]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF [Parameters].[Parameter 1] = 1&#13;&#10;    THEN SUM([ev_realizable]) / SUM([sealed_price_usd])&#13;&#10;ELSE SUM([ev])&#13;&#10;END' />
+      </column>
+      <column caption='ev_vs_price.csv' datatype='table' name='[__tableau_internal_object_id__].[ev_vs_price.csv_04B632AC7E9D48669AAB54E542036AE0]' role='measure' type='quantitative' />
+      <column caption='Bulk Rate' datatype='real' name='[bulk_rate]' role='measure' type='quantitative' />
+      <column caption='Bulk Threshold' datatype='real' name='[bulk_threshold]' role='measure' type='quantitative' />
+      <column caption='EV Nominal' datatype='real' default-format='*$#,##0.00' name='[ev]' role='measure' type='quantitative' />
+      <column caption='EV Realizable' datatype='real' default-format='*$#,##0.00' name='[ev_realizable]' role='measure' type='quantitative' />
+      <column caption='Price Collected Date' datatype='date' name='[price_collected_date]' role='dimension' type='ordinal' />
+      <column caption='Priced Coverage' datatype='real' default-format='p0%' name='[priced_coverage]' role='measure' type='quantitative' />
+      <column caption='Release Date' datatype='date' name='[release_date]' role='dimension' type='ordinal' />
+      <column caption='Sealed Price' datatype='real' default-format='*$#,##0.00' name='[sealed_price_usd]' role='measure' type='quantitative' />
+      <column caption='Set Category' datatype='string' name='[set_category]' role='dimension' type='nominal' />
+      <column caption='Set Code' datatype='string' name='[set_code]' role='dimension' type='nominal' />
+      <column caption='Set Name' datatype='string' name='[set_name]' role='dimension' type='nominal' />
+      <column caption='Unpriced Weight Share' datatype='real' default-format='p0%' name='[unpriced_weight_share]' role='measure' type='quantitative' />
+      <column caption='Variant' datatype='string' name='[variant]' role='dimension' type='nominal' />
+      <column-instance column='[__tableau_internal_object_id__].[ev_vs_price.csv_04B632AC7E9D48669AAB54E542036AE0]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:ev_vs_price.csv_04B632AC7E9D48669AAB54E542036AE0:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_0858190739124225]' derivation='Avg' name='[avg:Calculation_0858190739124225:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[ev]' derivation='Avg' name='[avg:ev:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[ev_realizable]' derivation='Avg' name='[avg:ev_realizable:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[sealed_price_usd]' derivation='Avg' name='[avg:sealed_price_usd:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_0858190739009536]' derivation='Sum' name='[sum:Calculation_0858190739009536:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_0858190739124225]' derivation='Sum' name='[sum:Calculation_0858190739124225:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[bulk_rate]' derivation='Sum' name='[sum:bulk_rate:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[bulk_threshold]' derivation='Sum' name='[sum:bulk_threshold:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[ev]' derivation='Sum' name='[sum:ev:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[ev_realizable]' derivation='Sum' name='[sum:ev_realizable:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[priced_coverage]' derivation='Sum' name='[sum:priced_coverage:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[sealed_price_usd]' derivation='Sum' name='[sum:sealed_price_usd:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[unpriced_weight_share]' derivation='Sum' name='[sum:unpriced_weight_share:qk]' pivot='key' type='quantitative' />
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0vfrbo90tj5apo14qmujz1fccoec].[sum:bulk_rate:qk]&quot;</bucket>
+            </map>
+            <map to='#4fc4d6'>
+              <bucket>&quot;[federated.0vfrbo90tj5apo14qmujz1fccoec].[avg:sealed_price_usd:qk]&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;[federated.0vfrbo90tj5apo14qmujz1fccoec].[avg:Calculation_0858190739124225:qk]&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;[federated.0vfrbo90tj5apo14qmujz1fccoec].[sum:Calculation_0858190739124225:qk]&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;[federated.0vfrbo90tj5apo14qmujz1fccoec].[sum:Calculation_0858190739009536:qk]&quot;</bucket>
+            </map>
+            <map to='#9c755f'>
+              <bucket>&quot;[federated.0vfrbo90tj5apo14qmujz1fccoec].[sum:sealed_price_usd:qk]&quot;</bucket>
+            </map>
+            <map to='#a87f35'>
+              <bucket>&quot;[federated.0vfrbo90tj5apo14qmujz1fccoec].[avg:ev_realizable:qk]&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;[federated.0vfrbo90tj5apo14qmujz1fccoec].[sum:ev_realizable:qk]&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;[federated.0vfrbo90tj5apo14qmujz1fccoec].[sum:unpriced_weight_share:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.0vfrbo90tj5apo14qmujz1fccoec].[__tableau_internal_object_id__].[cnt:ev_vs_price.csv_04B632AC7E9D48669AAB54E542036AE0:qk]&quot;</bucket>
+            </map>
+            <map to='#e8b04b'>
+              <bucket>&quot;[federated.0vfrbo90tj5apo14qmujz1fccoec].[avg:ev:qk]&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;[federated.0vfrbo90tj5apo14qmujz1fccoec].[sum:ev:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0vfrbo90tj5apo14qmujz1fccoec].[sum:bulk_threshold:qk]&quot;</bucket>
+            </map>
+            <map to='#ff9da7'>
+              <bucket>&quot;[federated.0vfrbo90tj5apo14qmujz1fccoec].[sum:priced_coverage:qk]&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='shape' field='[:Measure Names]' type='shape'>
+            <map to=':filled/circle'>
+              <bucket>&quot;[federated.0vfrbo90tj5apo14qmujz1fccoec].[avg:ev:qk]&quot;</bucket>
+            </map>
+            <map to=':filled/circle'>
+              <bucket>&quot;[federated.0vfrbo90tj5apo14qmujz1fccoec].[avg:sealed_price_usd:qk]&quot;</bucket>
+            </map>
+            <map to='circle'>
+              <bucket>&quot;[federated.0vfrbo90tj5apo14qmujz1fccoec].[avg:ev_realizable:qk]&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <datasource-dependencies datasource='Parameters'>
+        <column alias='Realizable value ÷ price' caption='p.Sort By' datatype='integer' name='[Parameter 1]' param-domain-type='list' role='measure' type='quantitative' value='1'>
+          <calculation class='tableau' formula='1' />
+          <aliases>
+            <alias key='1' value='Realizable value ÷ price' />
+            <alias key='2' value='Nominal EV per pack' />
+          </aliases>
+        </column>
+      </datasource-dependencies>
+      <object-graph>
+        <objects>
+          <object caption='ev_vs_price.csv' id='ev_vs_price.csv_04B632AC7E9D48669AAB54E542036AE0'>
+            <properties context=''>
+              <relation connection='textscan.1to80x200kash812em9ok01h2du5' name='ev_vs_price.csv' table='[ev_vs_price#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='set_code' ordinal='0' />
+                  <column datatype='string' name='set_name' ordinal='1' />
+                  <column datatype='string' name='set_category' ordinal='2' />
+                  <column datatype='date' name='release_date' ordinal='3' />
+                  <column datatype='string' name='variant' ordinal='4' />
+                  <column datatype='real' name='ev' ordinal='5' />
+                  <column datatype='real' name='ev_realizable' ordinal='6' />
+                  <column datatype='real' name='priced_coverage' ordinal='7' />
+                  <column datatype='real' name='unpriced_weight_share' ordinal='8' />
+                  <column datatype='real' name='bulk_threshold' ordinal='9' />
+                  <column datatype='real' name='bulk_rate' ordinal='10' />
+                  <column datatype='real' name='sealed_price_usd' ordinal='11' />
+                  <column datatype='date' name='price_collected_date' ordinal='12' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+    <datasource caption='ev_by_slot' inline='true' name='federated.1hcxccr1ruuzp7113uyag164i0td' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='ev_by_slot' name='textscan.0tyaz2f0r7aokr121n7hs1k0jtm1'>
+            <connection class='textscan' directory='../data/processed' filename='ev_by_slot.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.0tyaz2f0r7aokr121n7hs1k0jtm1' name='ev_by_slot.csv' table='[ev_by_slot#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='set_code' ordinal='0' />
+            <column datatype='string' name='set_name' ordinal='1' />
+            <column datatype='string' name='set_category' ordinal='2' />
+            <column datatype='string' name='variant' ordinal='3' />
+            <column datatype='string' name='sheet' ordinal='4' />
+            <column datatype='string' name='finish' ordinal='5' />
+            <column datatype='real' name='expected_picks' ordinal='6' />
+            <column datatype='real' name='sheet_ev' ordinal='7' />
+            <column datatype='real' name='sheet_ev_realizable' ordinal='8' />
+            <column datatype='real' name='slot_ev_contribution' ordinal='9' />
+            <column datatype='real' name='slot_ev_realizable_contribution' ordinal='10' />
+            <column datatype='real' name='sheet_coverage' ordinal='11' />
+            <column datatype='real' name='sealed_price_usd' ordinal='12' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[ev_by_slot.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>set_code</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[set_code]</local-name>
+            <parent-name>[ev_by_slot.csv]</parent-name>
+            <remote-alias>set_code</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[ev_by_slot.csv_96BFD7303FDC470081B5BBC9D24C113B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>set_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[set_name]</local-name>
+            <parent-name>[ev_by_slot.csv]</parent-name>
+            <remote-alias>set_name</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[ev_by_slot.csv_96BFD7303FDC470081B5BBC9D24C113B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>set_category</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[set_category]</local-name>
+            <parent-name>[ev_by_slot.csv]</parent-name>
+            <remote-alias>set_category</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[ev_by_slot.csv_96BFD7303FDC470081B5BBC9D24C113B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>variant</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[variant]</local-name>
+            <parent-name>[ev_by_slot.csv]</parent-name>
+            <remote-alias>variant</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[ev_by_slot.csv_96BFD7303FDC470081B5BBC9D24C113B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sheet</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[sheet]</local-name>
+            <parent-name>[ev_by_slot.csv]</parent-name>
+            <remote-alias>sheet</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[ev_by_slot.csv_96BFD7303FDC470081B5BBC9D24C113B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>finish</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[finish]</local-name>
+            <parent-name>[ev_by_slot.csv]</parent-name>
+            <remote-alias>finish</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[ev_by_slot.csv_96BFD7303FDC470081B5BBC9D24C113B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>expected_picks</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[expected_picks]</local-name>
+            <parent-name>[ev_by_slot.csv]</parent-name>
+            <remote-alias>expected_picks</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ev_by_slot.csv_96BFD7303FDC470081B5BBC9D24C113B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sheet_ev</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[sheet_ev]</local-name>
+            <parent-name>[ev_by_slot.csv]</parent-name>
+            <remote-alias>sheet_ev</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ev_by_slot.csv_96BFD7303FDC470081B5BBC9D24C113B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sheet_ev_realizable</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[sheet_ev_realizable]</local-name>
+            <parent-name>[ev_by_slot.csv]</parent-name>
+            <remote-alias>sheet_ev_realizable</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ev_by_slot.csv_96BFD7303FDC470081B5BBC9D24C113B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>slot_ev_contribution</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[slot_ev_contribution]</local-name>
+            <parent-name>[ev_by_slot.csv]</parent-name>
+            <remote-alias>slot_ev_contribution</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ev_by_slot.csv_96BFD7303FDC470081B5BBC9D24C113B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>slot_ev_realizable_contribution</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[slot_ev_realizable_contribution]</local-name>
+            <parent-name>[ev_by_slot.csv]</parent-name>
+            <remote-alias>slot_ev_realizable_contribution</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ev_by_slot.csv_96BFD7303FDC470081B5BBC9D24C113B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sheet_coverage</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[sheet_coverage]</local-name>
+            <parent-name>[ev_by_slot.csv]</parent-name>
+            <remote-alias>sheet_coverage</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ev_by_slot.csv_96BFD7303FDC470081B5BBC9D24C113B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sealed_price_usd</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[sealed_price_usd]</local-name>
+            <parent-name>[ev_by_slot.csv]</parent-name>
+            <remote-alias>sealed_price_usd</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ev_by_slot.csv_96BFD7303FDC470081B5BBC9D24C113B]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Slot Group' datatype='string' name='[Calculation_1307616343023616]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF CONTAINS(LOWER([sheet]), &quot;specialguest&quot;) OR CONTAINS(LOWER([sheet]), &quot;list&quot;)&#13;&#10;    OR CONTAINS(LOWER([sheet]), &quot;breakingnews&quot;)&#13;&#10;    OR CONTAINS(LOWER([sheet]), &quot;mysticalarchive&quot;)&#13;&#10;    OR CONTAINS(LOWER([sheet]), &quot;sourcematerial&quot;)&#13;&#10;    OR CONTAINS(LOWER([sheet]), &quot;throughtheages&quot;)&#13;&#10;    OR CONTAINS(LOWER([sheet]), &quot;legendaryturtle&quot;)&#13;&#10;    THEN &quot;Special Guest / Bonus&quot;&#13;&#10;ELSEIF CONTAINS(LOWER([sheet]), &quot;wildcard&quot;) &#13;&#10;    THEN &quot;Wildcard&quot;&#13;&#10;ELSEIF CONTAINS(LOWER([sheet]), &quot;land&quot;) OR CONTAINS(LOWER([sheet]), &quot;basic&quot;) &#13;&#10;    THEN &quot;Common / Uncommon / Land&quot;&#13;&#10;ELSEIF CONTAINS(LOWER([sheet]), &quot;foil&quot;) &#13;&#10;    THEN &quot;Foil&quot;&#13;&#10;ELSEIF CONTAINS(LOWER([sheet]), &quot;rare&quot;) OR CONTAINS(LOWER([sheet]), &quot;mythic&quot;) &#13;&#10;    THEN &quot;Rare / Mythic&quot;&#13;&#10;ELSEIF CONTAINS(LOWER([sheet]), &quot;common&quot;) OR CONTAINS(LOWER([sheet]), &quot;uncommon&quot;) &#13;&#10;    THEN &quot;Common / Uncommon / Land&quot;&#13;&#10;ELSE &quot;Other&quot; // nothing should hit Other&#13;&#10;END' />
+      </column>
+      <column caption='Slot Sort Key' datatype='real' name='[Calculation_2257594405265409]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF [Parameters].[Parameter 1] = 1&#13;&#10;    THEN SUM([slot_ev_realizable_contribution]) / MIN([sealed_price_usd])&#13;&#10;ELSE SUM([slot_ev_contribution])&#13;&#10;END' />
+      </column>
+      <column caption='ev_by_slot.csv' datatype='table' name='[__tableau_internal_object_id__].[ev_by_slot.csv_96BFD7303FDC470081B5BBC9D24C113B]' role='measure' type='quantitative' />
+      <column caption='Expected Picks' datatype='real' name='[expected_picks]' role='measure' type='quantitative' />
+      <column caption='Finish' datatype='string' name='[finish]' role='dimension' type='nominal' />
+      <column caption='Sealed Price Usd' datatype='real' name='[sealed_price_usd]' role='measure' type='quantitative' />
+      <column caption='Set Category' datatype='string' name='[set_category]' role='dimension' type='nominal' />
+      <column caption='Set Code' datatype='string' name='[set_code]' role='dimension' type='nominal' />
+      <column caption='Set Name' datatype='string' name='[set_name]' role='dimension' type='nominal' />
+      <column caption='Sheet' datatype='string' name='[sheet]' role='dimension' type='nominal' />
+      <column caption='Sheet Coverage' datatype='real' default-format='p0%' name='[sheet_coverage]' role='measure' type='quantitative' />
+      <column caption='Sheet Ev' datatype='real' name='[sheet_ev]' role='measure' type='quantitative' />
+      <column caption='Sheet Ev Realizable' datatype='real' name='[sheet_ev_realizable]' role='measure' type='quantitative' />
+      <column caption='Slot Ev Contribution' datatype='real' default-format='*$#,##0.00' name='[slot_ev_contribution]' role='measure' type='quantitative' />
+      <column caption='Slot Ev Realizable Contribution' datatype='real' name='[slot_ev_realizable_contribution]' role='measure' type='quantitative' />
+      <column caption='Variant' datatype='string' name='[variant]' role='dimension' type='nominal' />
+      <column-instance column='[Calculation_1307616343023616]' derivation='None' name='[none:Calculation_1307616343023616:nk]' pivot='key' type='nominal' />
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:Calculation_1307616343023616:nk]' palette='MTG EV - Slots' type='palette'>
+            <map to='#4fc4d6'>
+              <bucket>&quot;Wildcard&quot;</bucket>
+            </map>
+            <map to='#5a6b7d'>
+              <bucket>&quot;Common / Uncommon / Land&quot;</bucket>
+            </map>
+            <map to='#9b8ce0'>
+              <bucket>&quot;Foil&quot;</bucket>
+            </map>
+            <map to='#e0885b'>
+              <bucket>&quot;Rare / Mythic&quot;</bucket>
+            </map>
+            <map to='#e8b04b'>
+              <bucket>&quot;Special Guest / Bonus&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <datasource-dependencies datasource='Parameters'>
+        <column alias='Realizable value ÷ price' caption='p.Sort By' datatype='integer' name='[Parameter 1]' param-domain-type='list' role='measure' type='quantitative' value='1'>
+          <calculation class='tableau' formula='1' />
+          <aliases>
+            <alias key='1' value='Realizable value ÷ price' />
+            <alias key='2' value='Nominal EV per pack' />
+          </aliases>
+        </column>
+      </datasource-dependencies>
+      <object-graph>
+        <objects>
+          <object caption='ev_by_slot.csv' id='ev_by_slot.csv_96BFD7303FDC470081B5BBC9D24C113B'>
+            <properties context=''>
+              <relation connection='textscan.0tyaz2f0r7aokr121n7hs1k0jtm1' name='ev_by_slot.csv' table='[ev_by_slot#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='set_code' ordinal='0' />
+                  <column datatype='string' name='set_name' ordinal='1' />
+                  <column datatype='string' name='set_category' ordinal='2' />
+                  <column datatype='string' name='variant' ordinal='3' />
+                  <column datatype='string' name='sheet' ordinal='4' />
+                  <column datatype='string' name='finish' ordinal='5' />
+                  <column datatype='real' name='expected_picks' ordinal='6' />
+                  <column datatype='real' name='sheet_ev' ordinal='7' />
+                  <column datatype='real' name='sheet_ev_realizable' ordinal='8' />
+                  <column datatype='real' name='slot_ev_contribution' ordinal='9' />
+                  <column datatype='real' name='slot_ev_realizable_contribution' ordinal='10' />
+                  <column datatype='real' name='sheet_coverage' ordinal='11' />
+                  <column datatype='real' name='sealed_price_usd' ordinal='12' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='BAN Median Ratio'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='ev_vs_price' name='federated.0vfrbo90tj5apo14qmujz1fccoec' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0vfrbo90tj5apo14qmujz1fccoec'>
+            <column caption='EV / Price (Realizable)' datatype='real' default-format='*0.00&quot;×&quot;' name='[Calculation_0858190739124225]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[ev_realizable] / [sealed_price_usd]' />
+            </column>
+            <column caption='Median Realizable Ratio' datatype='real' default-format='*0.00&quot;×&quot;' name='[Calculation_1856547897282560]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='MEDIAN([Calculation_0858190739124225])' />
+            </column>
+            <column caption='EV Realizable' datatype='real' default-format='*$#,##0.00' name='[ev_realizable]' role='measure' type='quantitative' />
+            <column caption='Sealed Price' datatype='real' default-format='*$#,##0.00' name='[sealed_price_usd]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_1856547897282560]' derivation='User' name='[usr:Calculation_1856547897282560:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='pane'>
+            <format attr='background-color' value='#151b25' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#151b25' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Text' />
+            <encodings>
+              <text column='[federated.0vfrbo90tj5apo14qmujz1fccoec].[usr:Calculation_1856547897282560:qk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text />
+            </customized-tooltip>
+            <customized-label>
+              <formatted-text>
+                <run fontcolor='#e8b04b' fontname='Oswald' fontsize='48'><![CDATA[<[federated.0vfrbo90tj5apo14qmujz1fccoec].[usr:Calculation_1856547897282560:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#8a97a8' fontname='Montserrat' fontsize='10'>Median realizable EV ÷ price</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='center' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{795A60F6-1E95-4D8D-A1E9-4F0198786B28}' />
+    </worksheet>
+    <worksheet name='BAN Sets Above'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='ev_vs_price' name='federated.0vfrbo90tj5apo14qmujz1fccoec' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0vfrbo90tj5apo14qmujz1fccoec'>
+            <column caption='Sets Above Price (Realizable)' datatype='integer' default-format='n#,##0;-#,##0' name='[Calculation_1856547897389057]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM(&#13;&#10;    IF [ev_realizable] &gt;= [sealed_price_usd] &#13;&#10;        THEN 1 &#13;&#10;    ELSE 0 &#13;&#10;    END&#13;&#10;)' />
+            </column>
+            <column caption='Total Sets' datatype='integer' default-format='n#,##0;-#,##0' name='[Calculation_1856547897581570]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNTD([set_code])' />
+            </column>
+            <column caption='EV Realizable' datatype='real' default-format='*$#,##0.00' name='[ev_realizable]' role='measure' type='quantitative' />
+            <column caption='Sealed Price' datatype='real' default-format='*$#,##0.00' name='[sealed_price_usd]' role='measure' type='quantitative' />
+            <column caption='Set Code' datatype='string' name='[set_code]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_1856547897389057]' derivation='User' name='[usr:Calculation_1856547897389057:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1856547897581570]' derivation='User' name='[usr:Calculation_1856547897581570:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='pane'>
+            <format attr='background-color' value='#151b25' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#151b25' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Text' />
+            <encodings>
+              <text column='[federated.0vfrbo90tj5apo14qmujz1fccoec].[usr:Calculation_1856547897389057:qk]' />
+              <text column='[federated.0vfrbo90tj5apo14qmujz1fccoec].[usr:Calculation_1856547897581570:qk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text />
+            </customized-tooltip>
+            <customized-label>
+              <formatted-text>
+                <run fontcolor='#6fd08c' fontname='Oswald' fontsize='48'><![CDATA[<[federated.0vfrbo90tj5apo14qmujz1fccoec].[usr:Calculation_1856547897389057:qk]> / <[federated.0vfrbo90tj5apo14qmujz1fccoec].[usr:Calculation_1856547897581570:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#8a97a8' fontname='Montserrat' fontsize='11'>Sets where realizable EV ≥ price</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='center' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{7C1CEEDB-C06F-4143-BEC8-9AAEC68BC73B}' />
+    </worksheet>
+    <worksheet name='BAN Spread'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='ev_vs_price' name='federated.0vfrbo90tj5apo14qmujz1fccoec' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0vfrbo90tj5apo14qmujz1fccoec'>
+            <column caption='EV / Price (Nominal)' datatype='real' default-format='*0.00&quot;×&quot;' name='[Calculation_0858190739009536]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[ev] / [sealed_price_usd]' />
+            </column>
+            <column caption='EV / Price (Realizable)' datatype='real' default-format='*0.00&quot;×&quot;' name='[Calculation_0858190739124225]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[ev_realizable] / [sealed_price_usd]' />
+            </column>
+            <column caption='Median Realizable Ratio' datatype='real' default-format='*0.00&quot;×&quot;' name='[Calculation_1856547897282560]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='MEDIAN([Calculation_0858190739124225])' />
+            </column>
+            <column caption='Median Nominal Ratio' datatype='real' default-format='*0.00&quot;×&quot;' name='[Calculation_1856547897630723]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='MEDIAN([Calculation_0858190739009536])' />
+            </column>
+            <column caption='EV Nominal' datatype='real' default-format='*$#,##0.00' name='[ev]' role='measure' type='quantitative' />
+            <column caption='EV Realizable' datatype='real' default-format='*$#,##0.00' name='[ev_realizable]' role='measure' type='quantitative' />
+            <column caption='Sealed Price' datatype='real' default-format='*$#,##0.00' name='[sealed_price_usd]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_1856547897282560]' derivation='User' name='[usr:Calculation_1856547897282560:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1856547897630723]' derivation='User' name='[usr:Calculation_1856547897630723:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='pane'>
+            <format attr='background-color' value='#151b25' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#151b25' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0vfrbo90tj5apo14qmujz1fccoec].[usr:Calculation_1856547897630723:qk]' />
+              <text column='[federated.0vfrbo90tj5apo14qmujz1fccoec].[usr:Calculation_1856547897282560:qk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text />
+            </customized-tooltip>
+            <customized-label>
+              <formatted-text>
+                <run fontcolor='#e8b04b' fontname='Oswald' fontsize='48'><![CDATA[<[federated.0vfrbo90tj5apo14qmujz1fccoec].[usr:Calculation_1856547897630723:qk]>]]></run>
+                <run fontcolor='#8a97a8' fontname='Montserrat' fontsize='48'> → </run>
+                <run fontcolor='#e0685a' fontname='Oswald' fontsize='48'><![CDATA[<[federated.0vfrbo90tj5apo14qmujz1fccoec].[usr:Calculation_1856547897282560:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#8a97a8' fontname='Montserrat' fontsize='10'>Median ratio, </run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#8a97a8' fontname='Montserrat' fontsize='10'>nominal → realizable</run>
+                <run>Æ&#10;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='center' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{640CB9A9-3B4D-4C86-96C8-CA8787DB949F}' />
+    </worksheet>
+    <worksheet name='EV by Slot'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontcolor='#edf1f6' fontname='Oswald' fontsize='14'>Where the Value Sits — EV by Slot</run>
+            <run fontalignment='1'>Æ&#10;</run>
+            <run fontalignment='1' fontcolor='#8a97a8' fontname='Montserrat' fontsize='9'>Sorted to match — see sort control</run>
+            <run fontalignment='1'>Æ&#10;</run>
+            <run fontalignment='1' fontcolor='#4fc4d6' fontname='Montserrat' fontsize='12'>● Wildcard </run>
+            <run fontalignment='1' fontcolor='#e8b04b' fontname='Montserrat' fontsize='12'>● Special Guest / Bonus </run>
+            <run fontalignment='1' fontcolor='#e0885b' fontname='Montserrat' fontsize='12'>● Rare / Mythic </run>
+            <run fontalignment='1'>Æ&#10;</run>
+            <run fontalignment='1' fontcolor='#9b8ce0' fontname='Montserrat' fontsize='12'>● Foil</run>
+            <run fontalignment='1' fontcolor='#e8b04b' fontname='Montserrat' fontsize='12'>Æ </run>
+            <run fontalignment='1' fontcolor='#5a6b7d' fontname='Montserrat' fontsize='12'>● Common / Uncommon / Land</run>
+            <run fontalignment='1' fontcolor='#e8b04b' fontname='Montserrat' fontsize='12'>Æ </run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='ev_by_slot' name='federated.1hcxccr1ruuzp7113uyag164i0td' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column alias='Realizable value ÷ price' caption='p.Sort By' datatype='integer' name='[Parameter 1]' param-domain-type='list' role='measure' type='quantitative' value='1'>
+              <calculation class='tableau' formula='1' />
+              <aliases>
+                <alias key='1' value='Realizable value ÷ price' />
+                <alias key='2' value='Nominal EV per pack' />
+              </aliases>
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.1hcxccr1ruuzp7113uyag164i0td'>
+            <column caption='Slot Group' datatype='string' name='[Calculation_1307616343023616]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF CONTAINS(LOWER([sheet]), &quot;specialguest&quot;) OR CONTAINS(LOWER([sheet]), &quot;list&quot;)&#13;&#10;    OR CONTAINS(LOWER([sheet]), &quot;breakingnews&quot;)&#13;&#10;    OR CONTAINS(LOWER([sheet]), &quot;mysticalarchive&quot;)&#13;&#10;    OR CONTAINS(LOWER([sheet]), &quot;sourcematerial&quot;)&#13;&#10;    OR CONTAINS(LOWER([sheet]), &quot;throughtheages&quot;)&#13;&#10;    OR CONTAINS(LOWER([sheet]), &quot;legendaryturtle&quot;)&#13;&#10;    THEN &quot;Special Guest / Bonus&quot;&#13;&#10;ELSEIF CONTAINS(LOWER([sheet]), &quot;wildcard&quot;) &#13;&#10;    THEN &quot;Wildcard&quot;&#13;&#10;ELSEIF CONTAINS(LOWER([sheet]), &quot;land&quot;) OR CONTAINS(LOWER([sheet]), &quot;basic&quot;) &#13;&#10;    THEN &quot;Common / Uncommon / Land&quot;&#13;&#10;ELSEIF CONTAINS(LOWER([sheet]), &quot;foil&quot;) &#13;&#10;    THEN &quot;Foil&quot;&#13;&#10;ELSEIF CONTAINS(LOWER([sheet]), &quot;rare&quot;) OR CONTAINS(LOWER([sheet]), &quot;mythic&quot;) &#13;&#10;    THEN &quot;Rare / Mythic&quot;&#13;&#10;ELSEIF CONTAINS(LOWER([sheet]), &quot;common&quot;) OR CONTAINS(LOWER([sheet]), &quot;uncommon&quot;) &#13;&#10;    THEN &quot;Common / Uncommon / Land&quot;&#13;&#10;ELSE &quot;Other&quot; // nothing should hit Other&#13;&#10;END' />
+            </column>
+            <column caption='Slot Sort Key' datatype='real' name='[Calculation_2257594405265409]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF [Parameters].[Parameter 1] = 1&#13;&#10;    THEN SUM([slot_ev_realizable_contribution]) / MIN([sealed_price_usd])&#13;&#10;ELSE SUM([slot_ev_contribution])&#13;&#10;END' />
+            </column>
+            <column-instance column='[sheet_coverage]' derivation='Avg' name='[avg:sheet_coverage:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1307616343023616]' derivation='None' name='[none:Calculation_1307616343023616:nk]' pivot='key' type='nominal' />
+            <column-instance column='[set_name]' derivation='None' name='[none:set_name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[variant]' derivation='None' name='[none:variant:nk]' pivot='key' type='nominal' />
+            <column-instance column='[slot_ev_contribution]' derivation='Sum' name='[pcto:sum:slot_ev_contribution:qk:4]' pivot='key' type='quantitative'>
+              <table-calc ordering-field='[federated.1hcxccr1ruuzp7113uyag164i0td].[Calculation_1307616343023616]' ordering-type='Field' type='PctTotal' />
+            </column-instance>
+            <column caption='Sealed Price Usd' datatype='real' name='[sealed_price_usd]' role='measure' type='quantitative' />
+            <column caption='Set Name' datatype='string' name='[set_name]' role='dimension' type='nominal' />
+            <column caption='Sheet' datatype='string' name='[sheet]' role='dimension' type='nominal' />
+            <column caption='Sheet Coverage' datatype='real' default-format='p0%' name='[sheet_coverage]' role='measure' type='quantitative' />
+            <column caption='Slot Ev Contribution' datatype='real' default-format='*$#,##0.00' name='[slot_ev_contribution]' role='measure' type='quantitative' />
+            <column caption='Slot Ev Realizable Contribution' datatype='real' name='[slot_ev_realizable_contribution]' role='measure' type='quantitative' />
+            <column-instance column='[sheet_coverage]' derivation='Sum' name='[sum:sheet_coverage:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[slot_ev_contribution]' derivation='Sum' name='[sum:slot_ev_contribution:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_2257594405265409]' derivation='User' name='[usr:Calculation_2257594405265409:qk]' pivot='key' type='quantitative' />
+            <column caption='Variant' datatype='string' name='[variant]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <computed-sort column='[federated.1hcxccr1ruuzp7113uyag164i0td].[none:set_name:nk]' direction='DESC' using='[federated.1hcxccr1ruuzp7113uyag164i0td].[usr:Calculation_2257594405265409:qk]' />
+          <filter class='categorical' column='[federated.1hcxccr1ruuzp7113uyag164i0td].[none:variant:nk]'>
+            <groupfilter function='member' level='[none:variant:nk]' member='&quot;play&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1hcxccr1ruuzp7113uyag164i0td].[none:variant:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='1' field='[federated.1hcxccr1ruuzp7113uyag164i0td].[sum:slot_ev_contribution:qk]' field-type='quantitative' fold='true' scope='cols' synchronized='true' type='space' />
+            <format attr='display' class='1' field='[federated.1hcxccr1ruuzp7113uyag164i0td].[sum:slot_ev_contribution:qk]' scope='cols' value='false' />
+            <encoding attr='space' class='0' field='[federated.1hcxccr1ruuzp7113uyag164i0td].[sum:slot_ev_contribution:qk]' field-type='quantitative' major-origin='0.0' major-spacing='1.0' max='10.0' min='0.0' range-type='fixed' scope='cols' type='space' />
+            <format attr='auto-subtitle' class='0' field='[federated.1hcxccr1ruuzp7113uyag164i0td].[sum:slot_ev_contribution:qk]' scope='cols' value='false' />
+            <format attr='height' field='[federated.1hcxccr1ruuzp7113uyag164i0td].[sum:slot_ev_contribution:qk]' value='47' />
+            <format attr='title' class='0' field='[federated.1hcxccr1ruuzp7113uyag164i0td].[sum:slot_ev_contribution:qk]' scope='cols' value='Slot EV Contribution' />
+            <format attr='display' class='1' field='[federated.1hcxccr1ruuzp7113uyag164i0td].[pcto:sum:slot_ev_contribution:qk:4]' scope='cols' value='false' />
+            <format attr='height' field='[federated.1hcxccr1ruuzp7113uyag164i0td].[pcto:sum:slot_ev_contribution:qk:4]' value='49' />
+            <format attr='tick-color' field='[federated.1hcxccr1ruuzp7113uyag164i0td].[sum:slot_ev_contribution:qk]' value='#8a97a8' />
+            <format attr='tick-color' field='[federated.1hcxccr1ruuzp7113uyag164i0td].[pcto:sum:slot_ev_contribution:qk:4]' value='#8a97a8' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='height' field='[federated.1hcxccr1ruuzp7113uyag164i0td].[none:set_name:nk]' value='27' />
+            <format attr='text-format' field='[federated.1hcxccr1ruuzp7113uyag164i0td].[pcto:sum:slot_ev_contribution:qk:4]' value='p0%' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.1hcxccr1ruuzp7113uyag164i0td].[none:set_name:nk]' value='176' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='display' field='[federated.1hcxccr1ruuzp7113uyag164i0td].[none:set_name:nk]' value='true' />
+            <format attr='text-format' field='[federated.1hcxccr1ruuzp7113uyag164i0td].[avg:sheet_coverage:qk]' value='p0%' />
+            <format attr='color' field='[federated.1hcxccr1ruuzp7113uyag164i0td].[sum:slot_ev_contribution:qk]' value='#edf1f6' />
+            <format attr='text-format' field='[federated.1hcxccr1ruuzp7113uyag164i0td].[sum:sheet_coverage:qk]' value='p0%' />
+            <format attr='color' field='[federated.1hcxccr1ruuzp7113uyag164i0td].[pcto:sum:slot_ev_contribution:qk:4]' value='#edf1f6' />
+            <format attr='text-format' field='[federated.1hcxccr1ruuzp7113uyag164i0td].[pcto:sum:slot_ev_contribution:qk:4]' value='*0.00&quot;×&quot;' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='background-color' value='#0c1017' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#0c1017' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='color' value='#edf1f6' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-color' value='#232c3a' />
+            <format attr='line-visibility' value='on' />
+            <format attr='line-pattern-only' value='solid' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <_.fcp.IndividualControlFormatting.true...style-rule element='legend'>
+            <_.fcp.IndividualControlFormatting.true...format attr='color' field='[federated.1hcxccr1ruuzp7113uyag164i0td].[none:Calculation_1307616343023616:nk]' id='legend-color' value='#edf1f6' />
+            <_.fcp.IndividualControlFormatting.true...format attr='font-family' field='[federated.1hcxccr1ruuzp7113uyag164i0td].[none:Calculation_1307616343023616:nk]' id='legend-color' value='Montserrat' />
+            <_.fcp.IndividualControlFormatting.true...format attr='font-size' field='[federated.1hcxccr1ruuzp7113uyag164i0td].[none:Calculation_1307616343023616:nk]' id='legend-color' value='10' />
+            <_.fcp.IndividualControlFormatting.true...format attr='background-color' field='[federated.1hcxccr1ruuzp7113uyag164i0td].[none:Calculation_1307616343023616:nk]' id='legend-color' value='#151b25' />
+          </_.fcp.IndividualControlFormatting.true...style-rule>
+          <_.fcp.IndividualControlFormatting.true...style-rule element='legend-title'>
+            <_.fcp.IndividualControlFormatting.true...format attr='color' field='[federated.1hcxccr1ruuzp7113uyag164i0td].[none:Calculation_1307616343023616:nk]' id='legend-color' value='#8a97a8' />
+          </_.fcp.IndividualControlFormatting.true...style-rule>
+          <style-rule element='legend-title-text'>
+            <format attr='color' field='[federated.1hcxccr1ruuzp7113uyag164i0td].[none:Calculation_1307616343023616:nk]' value='Value by slot'>
+              <formatted-text>
+                <run>Value by slot</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <customized-tooltip>
+              <formatted-text>
+                <run bold='true'><![CDATA[<[federated.1hcxccr1ruuzp7113uyag164i0td].[none:set_name:nk]>]]></run>
+                <run>Æ&#10;&#10;</run>
+                <run fontcolor='#757575'><![CDATA[<[federated.1hcxccr1ruuzp7113uyag164i0td].[none:set_name:nk]>:	]]></run>
+                <run bold='true'><![CDATA[<[federated.1hcxccr1ruuzp7113uyag164i0td].[sum:slot_ev_contribution:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Sheet Coverage:</run>
+                <run bold='true'><![CDATA[	<[federated.1hcxccr1ruuzp7113uyag164i0td].[avg:sheet_coverage:qk]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='pane'>
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.1hcxccr1ruuzp7113uyag164i0td].[sum:slot_ev_contribution:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.1hcxccr1ruuzp7113uyag164i0td].[none:Calculation_1307616343023616:nk]' />
+              <tooltip column='[federated.1hcxccr1ruuzp7113uyag164i0td].[sum:sheet_coverage:qk]' />
+              <tooltip column='[federated.1hcxccr1ruuzp7113uyag164i0td].[pcto:sum:slot_ev_contribution:qk:4]' />
+              <tooltip column='[federated.1hcxccr1ruuzp7113uyag164i0td].[sum:slot_ev_contribution:qk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run bold='true' fontsize='12'><![CDATA[<[federated.1hcxccr1ruuzp7113uyag164i0td].[none:set_name:nk]>]]></run>
+                <run>Æ&#10;&#10;</run>
+                <run bold='true'><![CDATA[<[federated.1hcxccr1ruuzp7113uyag164i0td].[none:Calculation_1307616343023616:nk]>:  <[federated.1hcxccr1ruuzp7113uyag164i0td].[sum:slot_ev_contribution:qk]>  (<[federated.1hcxccr1ruuzp7113uyag164i0td].[pcto:sum:slot_ev_contribution:qk:4]>  of pack EV)]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='auto' />
+                <format attr='vertical-align' value='auto' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='false' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.1hcxccr1ruuzp7113uyag164i0td].[sum:slot_ev_contribution:qk]' x-index='1'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Text' />
+            <encodings>
+              <text column='[federated.1hcxccr1ruuzp7113uyag164i0td].[sum:slot_ev_contribution:qk]' />
+              <tooltip column='[federated.1hcxccr1ruuzp7113uyag164i0td].[avg:sheet_coverage:qk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text />
+            </customized-tooltip>
+            <customized-label>
+              <formatted-text>
+                <run>               &lt;</run>
+                <run>[federated.1hcxccr1ruuzp7113uyag164i0td].[sum:slot_ev_contribution:qk]</run>
+                <run>&gt;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='cell'>
+                <format attr='vertical-align' value='top' />
+                <format attr='text-align' value='left' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1hcxccr1ruuzp7113uyag164i0td].[none:set_name:nk]</rows>
+        <cols>([federated.1hcxccr1ruuzp7113uyag164i0td].[sum:slot_ev_contribution:qk] + [federated.1hcxccr1ruuzp7113uyag164i0td].[sum:slot_ev_contribution:qk])</cols>
+      </table>
+      <simple-id uuid='{1CE2D1B7-78E0-4C65-BBEC-EA5C57CE7191}' />
+    </worksheet>
+    <worksheet name='EV vs Price'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontcolor='#edf1f6' fontname='Oswald' fontsize='14'>EV vs. Sealed Price</run>
+            <run fontalignment='1'>Æ&#10;</run>
+            <run fontalignment='1' fontcolor='#edf1f6' fontname='Oswald' fontsize='8'>Æ </run>
+            <run fontalignment='1'>Æ&#10;</run>
+            <run fontalignment='1' fontcolor='#e8b04b' fontname='Montserrat' fontsize='12'>● EV Nominal</run>
+            <run fontalignment='1' fontcolor='#8a97a8' fontname='Montserrat' fontsize='12'>Æ    </run>
+            <run fontalignment='1' fontcolor='#a87f35' fontname='Montserrat' fontsize='12'>● EV Realizable</run>
+            <run fontalignment='1' fontcolor='#8a97a8' fontname='Montserrat' fontsize='12'>Æ    </run>
+            <run fontalignment='1' fontcolor='#4fc4d6' fontname='Montserrat' fontsize='12'>● Sealed Price</run>
+            <run fontalignment='1'>Æ&#10;</run>
+            <run fontalignment='1' fontcolor='#4fc4d6' fontname='Montserrat' fontsize='10'>Æ </run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='ev_vs_price' name='federated.0vfrbo90tj5apo14qmujz1fccoec' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column alias='Realizable value ÷ price' caption='p.Sort By' datatype='integer' name='[Parameter 1]' param-domain-type='list' role='measure' type='quantitative' value='1'>
+              <calculation class='tableau' formula='1' />
+              <aliases>
+                <alias key='1' value='Realizable value ÷ price' />
+                <alias key='2' value='Nominal EV per pack' />
+              </aliases>
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0vfrbo90tj5apo14qmujz1fccoec'>
+            <column caption='EV / Price (Nominal)' datatype='real' default-format='*0.00&quot;×&quot;' name='[Calculation_0858190739009536]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[ev] / [sealed_price_usd]' />
+            </column>
+            <column caption='EV / Price (Realizable)' datatype='real' default-format='*0.00&quot;×&quot;' name='[Calculation_0858190739124225]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[ev_realizable] / [sealed_price_usd]' />
+            </column>
+            <column caption='Dumbbell Sort Key' datatype='real' name='[Calculation_2257594405146624]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF [Parameters].[Parameter 1] = 1&#13;&#10;    THEN SUM([ev_realizable]) / SUM([sealed_price_usd])&#13;&#10;ELSE SUM([ev])&#13;&#10;END' />
+            </column>
+            <column-instance column='[Calculation_0858190739009536]' derivation='Avg' name='[avg:Calculation_0858190739009536:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_0858190739124225]' derivation='Avg' name='[avg:Calculation_0858190739124225:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[ev]' derivation='Avg' name='[avg:ev:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[ev_realizable]' derivation='Avg' name='[avg:ev_realizable:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[priced_coverage]' derivation='Avg' name='[avg:priced_coverage:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[sealed_price_usd]' derivation='Avg' name='[avg:sealed_price_usd:qk]' pivot='key' type='quantitative' />
+            <column caption='EV Nominal' datatype='real' default-format='*$#,##0.00' name='[ev]' role='measure' type='quantitative' />
+            <column caption='EV Realizable' datatype='real' default-format='*$#,##0.00' name='[ev_realizable]' role='measure' type='quantitative' />
+            <column-instance column='[set_code]' derivation='None' name='[none:set_code:nk]' pivot='key' type='nominal' />
+            <column-instance column='[set_name]' derivation='None' name='[none:set_name:nk]' pivot='key' type='nominal' />
+            <column caption='Priced Coverage' datatype='real' default-format='p0%' name='[priced_coverage]' role='measure' type='quantitative' />
+            <column caption='Sealed Price' datatype='real' default-format='*$#,##0.00' name='[sealed_price_usd]' role='measure' type='quantitative' />
+            <column caption='Set Code' datatype='string' name='[set_code]' role='dimension' type='nominal' />
+            <column caption='Set Name' datatype='string' name='[set_name]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_2257594405146624]' derivation='User' name='[usr:Calculation_2257594405146624:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0vfrbo90tj5apo14qmujz1fccoec].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0vfrbo90tj5apo14qmujz1fccoec].[avg:ev:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0vfrbo90tj5apo14qmujz1fccoec].[avg:ev_realizable:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0vfrbo90tj5apo14qmujz1fccoec].[avg:sealed_price_usd:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <computed-sort column='[federated.0vfrbo90tj5apo14qmujz1fccoec].[none:set_name:nk]' direction='DESC' using='[federated.0vfrbo90tj5apo14qmujz1fccoec].[usr:Calculation_2257594405146624:qk]' />
+          <slices>
+            <column>[federated.0vfrbo90tj5apo14qmujz1fccoec].[:Measure Names]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0vfrbo90tj5apo14qmujz1fccoec].[Multiple Values]' field-type='quantitative' major-origin='0.0' major-spacing='1.0' max='10.0' min='0.0' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='1' field='[federated.0vfrbo90tj5apo14qmujz1fccoec].[Multiple Values]' field-type='quantitative' fold='true' scope='cols' synchronized='true' type='space' />
+            <format attr='auto-subtitle' class='0' field='[federated.0vfrbo90tj5apo14qmujz1fccoec].[Multiple Values]' scope='cols' value='false' />
+            <format attr='title' class='0' field='[federated.0vfrbo90tj5apo14qmujz1fccoec].[Multiple Values]' scope='cols' value='USD per Set' />
+            <format attr='display' class='1' field='[federated.0vfrbo90tj5apo14qmujz1fccoec].[Multiple Values]' scope='cols' value='false' />
+            <format attr='height' field='[federated.0vfrbo90tj5apo14qmujz1fccoec].[Multiple Values]' value='50' />
+            <format attr='stroke-color' value='#232c3a' />
+            <format attr='line-pattern-only' value='solid' />
+            <format attr='tick-color' field='[federated.0vfrbo90tj5apo14qmujz1fccoec].[Multiple Values]' value='#8a97a8' />
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='height' field='[federated.0vfrbo90tj5apo14qmujz1fccoec].[none:set_name:nk]' value='13' />
+            <format attr='text-format' field='[federated.0vfrbo90tj5apo14qmujz1fccoec].[Multiple Values]' value='*$#,##0.00' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.0vfrbo90tj5apo14qmujz1fccoec].[none:set_name:nk]' value='184' />
+            <format attr='height-header' value='22' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-format' field='[federated.0vfrbo90tj5apo14qmujz1fccoec].[avg:ev:qk]' value='*$##,0.00' />
+            <format attr='text-format' field='[federated.0vfrbo90tj5apo14qmujz1fccoec].[avg:ev_realizable:qk]' value='*$#,##0.00' />
+            <format attr='text-format' field='[federated.0vfrbo90tj5apo14qmujz1fccoec].[avg:sealed_price_usd:qk]' value='*$#,##0.00' />
+            <format attr='text-format' field='[federated.0vfrbo90tj5apo14qmujz1fccoec].[Multiple Values]' value='*$#,##0.00' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='background-color' value='#0c1017' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#0c1017' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='font-family' value='Montserrat' />
+            <format attr='color' value='#edf1f6' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-color' value='#232c3a' />
+            <format attr='line-visibility' value='on' />
+            <format attr='line-pattern-only' value='solid' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='annotation'>
+            <format attr='fill-color' id='annotation_0' value='#00000000' />
+            <format attr='fill-color' id='annotation_3' value='#00000000' />
+            <format attr='fill-color' id='annotation_2' value='#00000000' />
+            <format attr='stroke-size' id='annotation_0' value='1' />
+            <format attr='stroke-color' id='annotation_0' value='#8a97a8' />
+            <format attr='line-visibility' id='annotation_0' value='on' />
+            <format attr='line-pattern-only' id='annotation_0' value='solid' />
+            <format attr='stroke-size' id='annotation_3' value='1' />
+            <format attr='stroke-color' id='annotation_3' value='#8a97a8' />
+            <format attr='line-visibility' id='annotation_3' value='on' />
+            <format attr='line-pattern-only' id='annotation_3' value='solid' />
+            <format attr='stroke-size' id='annotation_2' value='1' />
+            <format attr='stroke-color' id='annotation_2' value='#8a97a8' />
+            <format attr='line-visibility' id='annotation_2' value='on' />
+            <format attr='line-pattern-only' id='annotation_2' value='solid' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <tooltip column='[federated.0vfrbo90tj5apo14qmujz1fccoec].[avg:Calculation_0858190739009536:qk]' />
+              <tooltip column='[federated.0vfrbo90tj5apo14qmujz1fccoec].[avg:ev:qk]' />
+              <tooltip column='[federated.0vfrbo90tj5apo14qmujz1fccoec].[avg:ev_realizable:qk]' />
+              <tooltip column='[federated.0vfrbo90tj5apo14qmujz1fccoec].[avg:sealed_price_usd:qk]' />
+              <tooltip column='[federated.0vfrbo90tj5apo14qmujz1fccoec].[avg:priced_coverage:qk]' />
+              <text column='[federated.0vfrbo90tj5apo14qmujz1fccoec].[Multiple Values]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run bold='true' fontsize='12'><![CDATA[<[federated.0vfrbo90tj5apo14qmujz1fccoec].[none:set_name:nk]>]]></run>
+                <run>Æ&#10;&#10;</run>
+                <run fontcolor='#757575'>EV Nominal:</run>
+                <run bold='true' fontcolor='#757575'>Æ&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0vfrbo90tj5apo14qmujz1fccoec].[avg:ev:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>EV Realizable:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0vfrbo90tj5apo14qmujz1fccoec].[avg:ev_realizable:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Sealed Price:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0vfrbo90tj5apo14qmujz1fccoec].[avg:sealed_price_usd:qk]>]]></run>
+                <run>Æ&#10;&#10;</run>
+                <run fontcolor='#757575'>EV / Price (Realizable):&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0vfrbo90tj5apo14qmujz1fccoec].[avg:Calculation_0858190739124225:qk]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='1.3293370008468628' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='has-stroke' value='false' />
+                <format attr='mark-color' value='#a87f35' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.0vfrbo90tj5apo14qmujz1fccoec].[Multiple Values]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <path column='[federated.0vfrbo90tj5apo14qmujz1fccoec].[:Measure Names]' />
+              <tooltip column='[federated.0vfrbo90tj5apo14qmujz1fccoec].[avg:Calculation_0858190739009536:qk]' />
+              <tooltip column='[federated.0vfrbo90tj5apo14qmujz1fccoec].[avg:ev:qk]' />
+              <tooltip column='[federated.0vfrbo90tj5apo14qmujz1fccoec].[avg:ev_realizable:qk]' />
+              <tooltip column='[federated.0vfrbo90tj5apo14qmujz1fccoec].[avg:sealed_price_usd:qk]' />
+              <tooltip column='[federated.0vfrbo90tj5apo14qmujz1fccoec].[avg:priced_coverage:qk]' />
+              <text column='[federated.0vfrbo90tj5apo14qmujz1fccoec].[Multiple Values]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text />
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='1.3293370008468628' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+                <format attr='has-stroke' value='false' />
+                <format attr='mark-color' value='#3a4656' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='4' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.0vfrbo90tj5apo14qmujz1fccoec].[Multiple Values]' x-index='1'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <tooltip column='[federated.0vfrbo90tj5apo14qmujz1fccoec].[avg:Calculation_0858190739009536:qk]' />
+              <tooltip column='[federated.0vfrbo90tj5apo14qmujz1fccoec].[avg:ev:qk]' />
+              <tooltip column='[federated.0vfrbo90tj5apo14qmujz1fccoec].[avg:ev_realizable:qk]' />
+              <tooltip column='[federated.0vfrbo90tj5apo14qmujz1fccoec].[avg:sealed_price_usd:qk]' />
+              <tooltip column='[federated.0vfrbo90tj5apo14qmujz1fccoec].[avg:priced_coverage:qk]' />
+              <tooltip column='[federated.0vfrbo90tj5apo14qmujz1fccoec].[avg:Calculation_0858190739124225:qk]' />
+              <text column='[federated.0vfrbo90tj5apo14qmujz1fccoec].[Multiple Values]' />
+              <color column='[federated.0vfrbo90tj5apo14qmujz1fccoec].[:Measure Names]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run bold='true' fontsize='12'><![CDATA[<[federated.0vfrbo90tj5apo14qmujz1fccoec].[none:set_name:nk]>]]></run>
+                <run>Æ&#10;&#10;</run>
+                <run fontcolor='#757575'>EV Nominal:</run>
+                <run bold='true' fontcolor='#757575'>Æ&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0vfrbo90tj5apo14qmujz1fccoec].[avg:ev:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>EV Realizable:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0vfrbo90tj5apo14qmujz1fccoec].[avg:ev_realizable:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Sealed Price:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0vfrbo90tj5apo14qmujz1fccoec].[avg:sealed_price_usd:qk]>]]></run>
+                <run>Æ&#10;&#10;</run>
+                <run fontcolor='#757575' fontname='Benton Sans Book'>Value ratio (realizable)</run>
+                <run fontcolor='#757575'>:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0vfrbo90tj5apo14qmujz1fccoec].[avg:Calculation_0858190739124225:qk]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <customized-label>
+              <formatted-text>
+                <run>&lt;</run>
+                <run>[federated.0vfrbo90tj5apo14qmujz1fccoec].[Multiple Values]</run>
+                <run>&gt;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='auto' />
+                <format attr='vertical-align' value='auto' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='size' value='1.3293370008468628' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='false' />
+                <format attr='mark-labels-mode' value='selection' />
+                <format attr='has-stroke' value='false' />
+                <format attr='mark-color' value='#a87f35' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0vfrbo90tj5apo14qmujz1fccoec].[none:set_name:nk]</rows>
+        <cols>([federated.0vfrbo90tj5apo14qmujz1fccoec].[Multiple Values] + [federated.0vfrbo90tj5apo14qmujz1fccoec].[Multiple Values])</cols>
+        <annotations>
+          <annotation class='point' id='0' mark-position='1' pullback='0' text-width='170'>
+            <formatted-text>
+              <run fontalignment='0' fontsize='9'>Steepest discount:</run>
+              <run fontalignment='0'>Æ&#10;</run>
+              <run fontalignment='0' fontsize='9'>realizable EV ≈ 0.62× price</run>
+            </formatted-text>
+            <point>
+              <visual-coordinate class='axis'>
+                <x-coord axis-value='2.9344729344729341'>
+                  <node-reference>
+                    <axis>[federated.0vfrbo90tj5apo14qmujz1fccoec].[Multiple Values]</axis>
+                  </node-reference>
+                </x-coord>
+                <y-coord cell-offset='0.517241'>
+                  <node-reference>
+                    <fields>
+                      <field>[federated.0vfrbo90tj5apo14qmujz1fccoec].[none:set_name:nk]</field>
+                    </fields>
+                    <multibucket>
+                      <bucket>&quot;Teenage Mutant Ninja Turtles&quot;</bucket>
+                    </multibucket>
+                  </node-reference>
+                </y-coord>
+                <page-reference />
+              </visual-coordinate>
+            </point>
+            <body x='222' y='-13' />
+          </annotation>
+          <annotation class='point' id='1' mark-position='1' pullback='0' text-width='178'>
+            <formatted-text>
+              <run fontalignment='0' fontcolor='#000000' fontname='Benton Sans Book'>Survives the haircut — 1.12× even after bulk</run>
+            </formatted-text>
+            <point>
+              <visual-coordinate class='axis'>
+                <x-coord axis-value='5.5402985074626869'>
+                  <node-reference>
+                    <axis>[federated.0vfrbo90tj5apo14qmujz1fccoec].[Multiple Values]</axis>
+                  </node-reference>
+                </x-coord>
+                <y-coord cell-offset='0.487685'>
+                  <node-reference>
+                    <fields>
+                      <field>[federated.0vfrbo90tj5apo14qmujz1fccoec].[none:set_code:nk]</field>
+                      <field>[federated.0vfrbo90tj5apo14qmujz1fccoec].[none:set_name:nk]</field>
+                    </fields>
+                    <multibucket>
+                      <bucket>&quot;FDN&quot;</bucket>
+                      <bucket>&quot;Foundations&quot;</bucket>
+                    </multibucket>
+                  </node-reference>
+                </y-coord>
+                <page-reference />
+              </visual-coordinate>
+            </point>
+            <body x='-30' y='63' />
+          </annotation>
+          <annotation class='point' id='2' mark-position='1' pullback='0' text-width='150'>
+            <formatted-text>
+              <run fontsize='9'>Survives the haircut:</run>
+              <run>Æ&#10;</run>
+              <run fontsize='9'>1.12× even after bulk</run>
+            </formatted-text>
+            <point>
+              <visual-coordinate class='axis'>
+                <x-coord axis-value='5.5555555555555554'>
+                  <node-reference>
+                    <axis>[federated.0vfrbo90tj5apo14qmujz1fccoec].[Multiple Values]</axis>
+                  </node-reference>
+                </x-coord>
+                <y-coord cell-offset='0.600984'>
+                  <node-reference>
+                    <fields>
+                      <field>[federated.0vfrbo90tj5apo14qmujz1fccoec].[none:set_name:nk]</field>
+                    </fields>
+                    <multibucket>
+                      <bucket>&quot;Foundations&quot;</bucket>
+                    </multibucket>
+                  </node-reference>
+                </y-coord>
+                <page-reference />
+              </visual-coordinate>
+            </point>
+            <body x='-166' y='11' />
+          </annotation>
+          <annotation class='point' id='3' mark-position='1' pullback='0' text-width='201'>
+            <formatted-text>
+              <run fontalignment='0' fontsize='9'>UB premium: </run>
+              <run fontalignment='0'>Æ&#10;</run>
+              <run fontalignment='0' fontsize='9'>priced above even nominal EV</run>
+            </formatted-text>
+            <point>
+              <visual-coordinate class='axis'>
+                <x-coord axis-value='7.1737891737891735'>
+                  <node-reference>
+                    <axis>[federated.0vfrbo90tj5apo14qmujz1fccoec].[Multiple Values]</axis>
+                  </node-reference>
+                </x-coord>
+                <y-coord cell-offset='0.46798'>
+                  <node-reference>
+                    <fields>
+                      <field>[federated.0vfrbo90tj5apo14qmujz1fccoec].[none:set_name:nk]</field>
+                    </fields>
+                    <multibucket>
+                      <bucket>&quot;Final Fantasy&quot;</bucket>
+                    </multibucket>
+                  </node-reference>
+                </y-coord>
+                <page-reference />
+              </visual-coordinate>
+            </point>
+            <body x='-260' y='-5' />
+          </annotation>
+        </annotations>
+      </table>
+      <simple-id uuid='{D3C94676-AE94-412E-B2EF-83BAE0C8FF44}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='Booster Value'>
+      <style>
+        <style-rule element='table'>
+          <format attr='background-color' value='#0c1017' />
+        </style-rule>
+        <style-rule element='dash-title'>
+          <format attr='background-color' value='#0c1017' />
+        </style-rule>
+        <_.fcp.IndividualControlFormatting.true...style-rule element='parameter-ctrl'>
+          <_.fcp.IndividualControlFormatting.true...format attr='color' field='[Parameters].[Parameter 1]' value='#edf1f6' />
+          <_.fcp.IndividualControlFormatting.true...format attr='background-color' field='[Parameters].[Parameter 1]' value='#00000000' />
+        </_.fcp.IndividualControlFormatting.true...style-rule>
+        <_.fcp.IndividualControlFormatting.true...style-rule element='parameter-ctrl-title'>
+          <_.fcp.IndividualControlFormatting.true...format attr='color' field='[Parameters].[Parameter 1]' value='#8a97a8' />
+        </_.fcp.IndividualControlFormatting.true...style-rule>
+      </style>
+      <size maxheight='1200' maxwidth='1300' minheight='1200' minwidth='1300' sizing-mode='fixed' />
+      <datasources>
+        <datasource name='Parameters' />
+      </datasources>
+      <datasource-dependencies datasource='Parameters'>
+        <column alias='Realizable value ÷ price' caption='p.Sort By' datatype='integer' name='[Parameter 1]' param-domain-type='list' role='measure' type='quantitative' value='1'>
+          <calculation class='tableau' formula='1' />
+          <aliases>
+            <alias key='1' value='Realizable value ÷ price' />
+            <alias key='2' value='Nominal EV per pack' />
+          </aliases>
+          <members>
+            <member alias='Realizable value ÷ price' value='1' />
+            <member alias='Nominal EV per pack' value='2' />
+          </members>
+        </column>
+      </datasource-dependencies>
+      <zones>
+        <zone h='100000' id='2' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98666' id='21' param='horz' type-v2='layout-flow' w='98770' x='615' y='667'>
+            <zone h='98666' id='16' type-v2='layout-basic' w='98770' x='615' y='667'>
+              <zone h='70416' id='14' param='horz' type-v2='layout-flow' w='98770' x='615' y='667'>
+                <zone h='70416' id='1' param='vert' type-v2='layout-flow' w='98770' x='615' y='667'>
+                  <zone fixed-size='102' forceUpdate='true' h='9167' id='3' is-fixed='true' type-v2='text' w='98770' x='615' y='667'>
+                    <formatted-text>
+                      <run fontalignment='1' fontcolor='#edf1f6' fontname='Oswald' fontsize='26'>MAGIC: THE GATHERING — BOOSTER VALUE VS. PRICE</run>
+                      <run fontalignment='1'>Æ&#10;</run>
+                      <run fontalignment='1' fontcolor='#8a97a8' fontname='Montserrat' fontsize='12'>Most Play Boosters look +EV on paper.</run>
+                      <run fontalignment='1'>Æ&#10;</run>
+                      <run fontalignment='1' fontcolor='#8a97a8' fontname='Montserrat' fontsize='12'>Once you discount the bulk you can&apos;t sell, the typical pack is worth less than it costs.</run>
+                    </formatted-text>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                  <zone fixed-size='139' h='11583' id='4' is-fixed='true' layout-strategy-id='distribute-evenly' param='horz' type-v2='layout-flow' w='98770' x='615' y='9834'>
+                    <zone h='11584' id='5' name='BAN Spread' show-title='false' w='32923' x='615' y='9833'>
+                      <layout-cache cell-count-h='1' cell-count-w='1' type-h='cell' type-w='cell' />
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                    <zone h='11584' id='6' name='BAN Median Ratio' show-title='false' w='32924' x='33538' y='9833'>
+                      <layout-cache cell-count-h='1' cell-count-w='1' type-h='cell' type-w='cell' />
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                    <zone h='11584' id='7' name='BAN Sets Above' show-title='false' w='32923' x='66462' y='9833'>
+                      <layout-cache cell-count-h='1' cell-count-w='1' type-h='cell' type-w='cell' />
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                  </zone>
+                  <zone h='49657' id='8' param='horz' type-v2='layout-flow' w='98770' x='615' y='21417'>
+                    <zone fixed-size='626' h='49657' id='9' is-fixed='true' name='EV vs Price' w='49385' x='615' y='21417'>
+                      <layout-cache minwidth='286' type-h='cell' type-w='scalable' />
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='8' />
+                      </zone-style>
+                    </zone>
+                    <zone h='49657' id='12' name='EV by Slot' w='49385' x='50000' y='21417'>
+                      <layout-cache minwidth='278' type-h='fixed' type-w='scalable' />
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='8' />
+                      </zone-style>
+                    </zone>
+                  </zone>
+                </zone>
+              </zone>
+              <zone forceUpdate='true' h='9333' id='15' type-v2='text' w='98770' x='615' y='90000'>
+                <formatted-text>
+                  <run bold='true' fontcolor='#8a97a8' fontname='Montserrat'>Method</run>
+                  <run fontcolor='#8a97a8' fontname='Montserrat'>:  Booster EV computed from MTGJSON community-maintained collation configs (print-sheet weights), with each slot priced at the weighted-average TCGplayer market price of the cards on its print sheet. Realizable EV applies a bulk floor — cards under $0.25 valued at $0.02 — reflecting that bulk commons cannot be liquidated at market price.</run>
+                  <run>Æ&#10;</run>
+                  <run bold='true' fontcolor='#8a97a8' fontname='Montserrat'>Sources</run>
+                  <run fontcolor='#8a97a8' fontname='Montserrat'>:  MTGJSON (AllPrintings, AllPrices) · TCGplayer market prices · Sealed Play Booster prices hand-collected from TCGplayer, 2026-07-10.</run>
+                  <run>Æ&#10;</run>
+                  <run bold='true' fontcolor='#8a97a8' fontname='Montserrat'>Scope</run>
+                  <run fontcolor='#8a97a8' fontname='Montserrat'>:  Play Booster era — MKM (Feb 2024) onward, 15 sets. Universes Beyond sets flagged separately.</run>
+                  <run>Æ&#10;</run>
+                  <run bold='true' fontcolor='#8a97a8' fontname='Montserrat'>Limitations</run>
+                  <run fontcolor='#8a97a8' fontname='Montserrat'>:  Singles-market proxy, not Wizards of the Coast internal cost, margin, or sales data. Collation configs are community-maintained and may deviate from official print sheets. Sealed prices are a single-date snapshot; EV reflects singles prices as of that date.</run>
+                  <run>Æ&#10;</run>
+                  <run bold='true' fontcolor='#8a97a8' fontname='Montserrat'>Author</run>
+                  <run fontcolor='#8a97a8' fontname='Montserrat'>:  Obie W. Lawrence  ·  github.com/obi-law</run>
+                </formatted-text>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone forceUpdate='true' h='18917' id='35' type-v2='text' w='98770' x='615' y='71083'>
+                <formatted-text>
+                  <run fontalignment='1' fontcolor='#edf1f6' fontname='Oswald' fontsize='12'>WHAT THE DATA SHOWS</run>
+                  <run fontalignment='1'>Æ&#10;</run>
+                  <run>Æ&#10;</run>
+                  <run bold='true' fontcolor='#edf1f6' fontname='Montserrat' fontsize='12'>Finding 1:</run>
+                  <run fontcolor='#8a97a8' fontname='Montserrat' fontsize='12'> The bulk discount is a constant, not a variable.  Every Play Booster carries $1.17–$1.48 of singles that can&apos;t be liquidated — a median $1.37, or 22% of nominal EV. The flip from 13/15 to 5/15 sets happens because most sets&apos; nominal margin was thinner than that fixed haircut.</run>
+                  <run>Æ&#10;&#10;</run>
+                  <run bold='true' fontcolor='#edf1f6' fontname='Montserrat' fontsize='12'>Finding 2:</run>
+                  <run fontcolor='#8a97a8' fontname='Montserrat' fontsize='12'> Licensed sets are priced above their content.  Universes Beyond packs return a median 0.79× realizable value vs. 0.93× for in-universe sets. Final Fantasy is the clearest case: the highest nominal EV of any set ($8.59) and the only pack priced above it ($9.08).</run>
+                  <run>Æ&#10;&#10;</run>
+                  <run bold='true' fontcolor='#edf1f6' fontname='Montserrat' fontsize='12'>Finding 3:</run>
+                  <run fontcolor='#8a97a8' fontname='Montserrat' fontsize='12'> Sealed pricing tracks brand more than content.  Pack prices span $3.99–$9.08 while the value inside spans only $4.41–$8.59 (correlation 0.78). Price is set by demand and licensing, not by what&apos;s in the pack.</run>
+                </formatted-text>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                  <format attr='padding' value='12' />
+                  <format attr='background-color' value='#151b25' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+        <zone custom-title='true' h='4333' id='22' mode='compact' param='[Parameters].[Parameter 1]' type-v2='paramctrl' w='12231' x='1538' y='26583'>
+          <formatted-text>
+            <run fontname='Montserrat' fontsize='10'>Sort sets by:</run>
+          </formatted-text>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='1300' minheight='1300' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='39' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98666' id='38' param='vert' type-v2='layout-flow' w='98770' x='615' y='667'>
+                <zone fixed-size='102' forceUpdate='true' h='9167' id='3' type-v2='text' w='98770' x='615' y='667'>
+                  <formatted-text>
+                    <run fontalignment='1' fontcolor='#edf1f6' fontname='Oswald' fontsize='26'>MAGIC: THE GATHERING — BOOSTER VALUE VS. PRICE</run>
+                    <run fontalignment='1'>Æ&#10;</run>
+                    <run fontalignment='1' fontcolor='#8a97a8' fontname='Montserrat' fontsize='12'>Most Play Boosters look +EV on paper.</run>
+                    <run fontalignment='1'>Æ&#10;</run>
+                    <run fontalignment='1' fontcolor='#8a97a8' fontname='Montserrat' fontsize='12'>Once you discount the bulk you can&apos;t sell, the typical pack is worth less than it costs.</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='131' h='11584' id='5' is-fixed='true' name='BAN Spread' show-title='false' w='32923' x='615' y='9833'>
+                  <layout-cache cell-count-h='1' cell-count-w='1' type-h='cell' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='131' h='11584' id='6' is-fixed='true' name='BAN Median Ratio' show-title='false' w='32924' x='33538' y='9833'>
+                  <layout-cache cell-count-h='1' cell-count-w='1' type-h='cell' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='131' h='11584' id='7' is-fixed='true' name='BAN Sets Above' show-title='false' w='32923' x='66462' y='9833'>
+                  <layout-cache cell-count-h='1' cell-count-w='1' type-h='cell' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='49657' id='9' is-fixed='true' name='EV vs Price' w='49385' x='615' y='21417'>
+                  <layout-cache cell-count-h='15' minwidth='286' non-cell-size-h='170' type-h='cell' type-w='scalable' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='49657' id='12' is-fixed='true' name='EV by Slot' w='49385' x='50000' y='21417'>
+                  <layout-cache fixed-size-h='574' minwidth='278' type-h='fixed' type-w='scalable' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone custom-title='true' h='4333' id='22' mode='compact' param='[Parameters].[Parameter 1]' type-v2='paramctrl' w='12231' x='1538' y='26583'>
+                  <formatted-text>
+                    <run fontname='Montserrat' fontsize='10'>Sort sets by:</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='18917' id='35' type-v2='text' w='98770' x='615' y='71083'>
+                  <formatted-text>
+                    <run fontalignment='1' fontcolor='#edf1f6' fontname='Oswald' fontsize='12'>WHAT THE DATA SHOWS</run>
+                    <run fontalignment='1'>Æ&#10;</run>
+                    <run>Æ&#10;</run>
+                    <run bold='true' fontcolor='#edf1f6' fontname='Montserrat' fontsize='12'>Finding 1:</run>
+                    <run fontcolor='#8a97a8' fontname='Montserrat' fontsize='12'> The bulk discount is a constant, not a variable.  Every Play Booster carries $1.17–$1.48 of singles that can&apos;t be liquidated — a median $1.37, or 22% of nominal EV. The flip from 13/15 to 5/15 sets happens because most sets&apos; nominal margin was thinner than that fixed haircut.</run>
+                    <run>Æ&#10;&#10;</run>
+                    <run bold='true' fontcolor='#edf1f6' fontname='Montserrat' fontsize='12'>Finding 2:</run>
+                    <run fontcolor='#8a97a8' fontname='Montserrat' fontsize='12'> Licensed sets are priced above their content.  Universes Beyond packs return a median 0.79× realizable value vs. 0.93× for in-universe sets. Final Fantasy is the clearest case: the highest nominal EV of any set ($8.59) and the only pack priced above it ($9.08).</run>
+                    <run>Æ&#10;&#10;</run>
+                    <run bold='true' fontcolor='#edf1f6' fontname='Montserrat' fontsize='12'>Finding 3:</run>
+                    <run fontcolor='#8a97a8' fontname='Montserrat' fontsize='12'> Sealed pricing tracks brand more than content.  Pack prices span $3.99–$9.08 while the value inside spans only $4.41–$8.59 (correlation 0.78). Price is set by demand and licensing, not by what&apos;s in the pack.</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#151b25' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='9333' id='15' type-v2='text' w='98770' x='615' y='90000'>
+                  <formatted-text>
+                    <run bold='true' fontcolor='#8a97a8' fontname='Montserrat'>Method</run>
+                    <run fontcolor='#8a97a8' fontname='Montserrat'>:  Booster EV computed from MTGJSON community-maintained collation configs (print-sheet weights), with each slot priced at the weighted-average TCGplayer market price of the cards on its print sheet. Realizable EV applies a bulk floor — cards under $0.25 valued at $0.02 — reflecting that bulk commons cannot be liquidated at market price.</run>
+                    <run>Æ&#10;</run>
+                    <run bold='true' fontcolor='#8a97a8' fontname='Montserrat'>Sources</run>
+                    <run fontcolor='#8a97a8' fontname='Montserrat'>:  MTGJSON (AllPrintings, AllPrices) · TCGplayer market prices · Sealed Play Booster prices hand-collected from TCGplayer, 2026-07-10.</run>
+                    <run>Æ&#10;</run>
+                    <run bold='true' fontcolor='#8a97a8' fontname='Montserrat'>Scope</run>
+                    <run fontcolor='#8a97a8' fontname='Montserrat'>:  Play Booster era — MKM (Feb 2024) onward, 15 sets. Universes Beyond sets flagged separately.</run>
+                    <run>Æ&#10;</run>
+                    <run bold='true' fontcolor='#8a97a8' fontname='Montserrat'>Limitations</run>
+                    <run fontcolor='#8a97a8' fontname='Montserrat'>:  Singles-market proxy, not Wizards of the Coast internal cost, margin, or sales data. Collation configs are community-maintained and may deviate from official print sheets. Sealed prices are a single-date snapshot; EV reflects singles prices as of that date.</run>
+                    <run>Æ&#10;</run>
+                    <run bold='true' fontcolor='#8a97a8' fontname='Montserrat'>Author</run>
+                    <run fontcolor='#8a97a8' fontname='Montserrat'>:  Obie W. Lawrence  ·  github.com/obi-law</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{DEDE4F49-C087-46BA-AC0B-0581FAFB5631}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='51'>
+    <window class='dashboard' maximized='true' name='Booster Value'>
+      <viewpoints>
+        <viewpoint name='BAN Median Ratio'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='BAN Sets Above'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='BAN Spread'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='EV by Slot'>
+          <highlight field='[federated.1hcxccr1ruuzp7113uyag164i0td].[none:Calculation_1307616343023616:nk]'>
+            <bucket-selection />
+          </highlight>
+        </viewpoint>
+        <viewpoint name='EV vs Price'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='9' />
+      <grid grid-overlay-mode='on' />
+      <simple-id uuid='{9EF91E7E-194C-41A7-A197-F215EAB864BA}' />
+    </window>
+    <window class='worksheet' hidden='true' name='BAN Median Ratio'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{5BAE00DE-E6EB-4FD4-8564-23C5815568F7}' />
+    </window>
+    <window class='worksheet' hidden='true' name='BAN Sets Above'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <selection-collection>
+          <tuple-selection>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields />
+                  <y-fields />
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.0vfrbo90tj5apo14qmujz1fccoec].[usr:Calculation_1856547897389057:qk]</field>
+                  <field>[federated.0vfrbo90tj5apo14qmujz1fccoec].[usr:Calculation_1856547897581570:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>5</value>
+                <value>15</value>
+              </tuple>
+            </tuple-reference>
+          </tuple-selection>
+        </selection-collection>
+      </viewpoint>
+      <simple-id uuid='{707F9F36-C39F-4905-9C21-48879982B9E7}' />
+    </window>
+    <window class='worksheet' hidden='true' name='BAN Spread'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{518D1960-16A0-4951-B921-8F6E6F72F076}' />
+    </window>
+    <window class='worksheet' hidden='true' name='EV by Slot'>
+      <cards>
+        <edge name='left'>
+          <strip size='285'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='1' param='[federated.1hcxccr1ruuzp7113uyag164i0td].[none:Calculation_1307616343023616:nk]' type='color' />
+            <card mode='compact' param='[Parameters].[Parameter 1]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <selection-collection>
+          <node-selection select-tuples='false'>
+            <oriented-node-reference orientation='horizontal'>
+              <node-reference>
+                <axis>[federated.1hcxccr1ruuzp7113uyag164i0td].[sum:slot_ev_contribution:qk]</axis>
+              </node-reference>
+              <page-reference />
+            </oriented-node-reference>
+          </node-selection>
+        </selection-collection>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1hcxccr1ruuzp7113uyag164i0td].[none:Calculation_1163031315222528:nk]</field>
+            <field>[federated.1hcxccr1ruuzp7113uyag164i0td].[none:Calculation_1163031315419137:qk]</field>
+            <field>[federated.1hcxccr1ruuzp7113uyag164i0td].[none:Calculation_1163031315865602:nk]</field>
+            <field>[federated.1hcxccr1ruuzp7113uyag164i0td].[none:Calculation_1163031315890179:nk]</field>
+            <field>[federated.1hcxccr1ruuzp7113uyag164i0td].[none:Calculation_1163031315910660:nk]</field>
+            <field>[federated.1hcxccr1ruuzp7113uyag164i0td].[none:Calculation_1163031316058117:nk]</field>
+            <field>[federated.1hcxccr1ruuzp7113uyag164i0td].[none:Calculation_1163031316168710:nk]</field>
+            <field>[federated.1hcxccr1ruuzp7113uyag164i0td].[none:Calculation_1163031316185095:nk]</field>
+            <field>[federated.1hcxccr1ruuzp7113uyag164i0td].[none:Calculation_1307616343023616:nk]</field>
+            <field>[federated.1hcxccr1ruuzp7113uyag164i0td].[none:set_name:nk]</field>
+            <field>[federated.1hcxccr1ruuzp7113uyag164i0td].[none:variant:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{8142200B-878A-4AC6-88E1-990635282172}' />
+    </window>
+    <window class='worksheet' hidden='true' name='EV vs Price'>
+      <cards>
+        <edge name='left'>
+          <strip size='243'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='4' param='[federated.0vfrbo90tj5apo14qmujz1fccoec].[:Measure Names]' type='color' />
+            <card mode='compact' param='[Parameters].[Parameter 1]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+        <selection-collection>
+          <node-selection select-tuples='false'>
+            <oriented-node-reference orientation='horizontal'>
+              <node-reference>
+                <axis>[federated.0vfrbo90tj5apo14qmujz1fccoec].[Multiple Values]</axis>
+              </node-reference>
+              <page-reference />
+            </oriented-node-reference>
+          </node-selection>
+        </selection-collection>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0vfrbo90tj5apo14qmujz1fccoec].[:Measure Names]</field>
+            <field>[federated.0vfrbo90tj5apo14qmujz1fccoec].[none:set_code:nk]</field>
+            <field>[federated.0vfrbo90tj5apo14qmujz1fccoec].[none:set_name:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{114804E2-23A8-4D70-BF0D-F2C3F3764D2F}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Booster Value' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAAgAElEQVR4nOydd3hcx3Xof7fs3bu9Ywt6BwiCYBdFUV2yJEuxrWc/1yhySXOJ7ThOsWM/
+      +7knzrMTvafEL3GLaMndkizL9lOLZUlWsRqLSJAEAaItFrvA9t7u+2NBkBSLSIoUQWJ/38eP
+      uLNzZ87cO2fKuTNzBLPdq1GnzjJFPNcC1KlzLqkrQJ1lTV0B6ixr6gpQZ1lTV4A6y5q6AtRZ
+      1kiKav7suRbifMHhbeGiwU7Gp2YAuPSaG8jMTZIrVOhcsZpmp8rsfByA3sH1XH/t5WiFJOH5
+      BF0Da/CYJebjKdZcfDlXX3oRybkQiXTuiDyGNmxm04Y19PX14nMYMTe0YdOViCYybLr8WnKx
+      afrXXMLGdUP09XUxuX8fpWrt3kBbDzfdeB02pcrkTGQxbKDdy1QoQu/QBrZsWk9fXy+tPgey
+      3Y/bKDAfT7HhkquopmfpHNywmP9MKMj1119PT1cHlHPMx1O0966i0aFHsfnwmEViySxrN11G
+      JjJOVbFww403MtjbzuT4AYrl6qk/ZL2FN950PX293egoEV54nms3X8FVl24kEw0TS2WR9Wau
+      u/H1DPV3MT0+RqFcpaNviBtedwWZaBi9I8DVV2yhr6+Xvr520ukKV111GX19vVBM0zGwgQ1r
+      B+s9wKnQvvoSbv/qpxEA9C5u+9fb6fZbAfjjj3ySv/7AHwLQPLCFb9/2OURR4l++eSc9PjPX
+      3HwLN1y+lvXXvo2vfvLPkPQ27vrRHZhe9gYMRjNX3vRW3vu2GzGbjNx8y59xzcUrAfjzv/4s
+      3X4rt/z5x7ly4wA2mw1p4T7F3sRPfvAtjJLIRz73z7z+oh4A3nTL+/nKpz4MgGowsvHKG/nQ
+      e9+KxWzkhre9hxsuXwvA+/7ik6xsdfO29/0F120ZwmazIdoC3PblT2KwOPj6N+/kiqE2Lr/h
+      rdx8zSbWXX49n/nYnwBwy59/HL8VPvHl23ndxl661l/NbZ//+Ok9ZGuA277yKRwuD5/6x9u5
+      fmMPW97wbr74V+9GVKxs/fGP8ZolPvEPt3P9pj5aBrfwndv+J/bmlXz7/3wBUVL5zl3fw23R
+      09gzxFc+/VFsNis96y7jL//sD7HZbKh6He/7i0+yrrcZ+fSkXJ4oegVDoIdul0KhZTUWsYxO
+      lgGJ/mYL+uoqBGDtxo08+5v72Lr1e7StvYqVvW2LaWy8+GJ+fc+PuOO793DjrR+gw69nx3Rh
+      8fenHn2A1v4NaO457n/4Cdbc9MfHlOXJ//olP3xo2+J158BaEnuf41t3fI+MqY2VKwf45dN7
+      Wb2qE80s4pBh21OP4mnto1Fz89P7H+Gjl7zlmGk/89gD3PHzp8FTay1/9IO7cHSsZfXqlcQP
+      i3fpTW+l80v/vHi96eKNfPyN72EvPTzxnb87nUdco5Dku9/5DnHByeDgCui5mPt+cidbv/8g
+      W17/Ttb1t3PJ5k385Rvew+5MM+9/aitNvsdITe/le1v/k1xVZj64nx///AH+9IYV3HHHj9j0
+      hlsJTezljju2Lmbz7G8fqvcAp8rw8Bhr1qxgzdo17BoeRq/ToXp7kKJ7GEsb6LDLqHoD1Uqt
+      +//8X76Xnz26c/F+RVUoVyoAfPpDt7I/ovCr39yP8QR5dvSu5IorLsdl0R8RNtjXuXitN6hU
+      qrU8f/BvX+Afv3U3SFbaLXke3BlmsM9/zLTbuvq54orLcduNh4WtYGhFd+1CZ+Tqa6/j+ivW
+      s2/P3iPufer5XdzyzjctXqt6PZVKhXJoNxfdcOsJSvQK6K380a23ctPla/jt736PXlGoLpRN
+      q1aRJQlFUWrPuKqhyRLj2x4n417DP37yz7n3rm8xE8sflazV6WXTposw6GrX/avX1xXgVDAb
+      VH73+OMMrlnD6r4Az2w7gCAIDK5Zw95du9g9PMqaNf2L8S+/8R3cededXL+5/5jp7X1pO9li
+      mlv++63kjhmjhjfQwsDAAGZVtxjW2tlHf1fbUXE711zGnXd+jz9+y3X4+4eIjg4zvGs3a9es
+      PmbaDf4mBgYGsJqUxbDm9h4GejpqF5LC5qtuQJx6hvufOlIBnnnwXlZe9WYsOuGI8H/8tzu4
+      4/YvLV7rFBWvt+EE/zxIhyehVclkcxhMZpr8vhM8mcNuKaZ499vfin3w9XzjH/4G4RhxLHY3
+      69atW1SA5rbu+hDoVMnM7MY+sBlVKDKSA4NepXXVKtZfvYqVgomn40PsyNVaq0fv/z4D6zbi
+      c1sX79eq2uLL+Y+7H+Zf/uINhArHyOgwnvyvX/KNHz7MhhvetRj2X7/8CT86bAh0sIXc/8Jv
+      +c9fDHBFk48hvYX2VZdwa3uF+Zck2Pqro9J+5rEHuf279zF46X9bDHvswXu46+AQKB/nS1/4
+      B57+zfcwvry5rGS5+5HtfOZD7+CrQFWryfA3H/xrnnniPxajuVt6uPUtN5yghGW+8bX/Rby4
+      cFlM89Mf/4jpnJ4/ff017NeOXq6mvSzM7PTS09vI+9/9Ln58/6+5YvBOdhaPvGd69CVuv/1f
+      F68fuOf7dQU4FWpdcYmE5kSeeQyMtVZ19eoh/u79tzCurODf//qN/OpHL9J20UoEQaSvt4vn
+      XzyUxvTkFJe1tiIqZjobLczNa2z91X/y5ituJPsqZJuZnMLX2ooqC/T29kH8eYaGhvinz3yM
+      nz6X5smffvG0065kZnh6f4lLVrce9dvdd32PT3y4NtyZnAzS0d5JqiGA5XDZRrbzla9sP+V8
+      21rbmJ+fYTI/xYrWVkSdgcaAjclgiMmpadpa24mn/WSmpig7WvjyZ/+Kq298JwemI5jMJoi+
+      ch71IdApEIsEOTAZ4tHfPMRvH32SiX27SRWhlB5n9/45gvt2E8qWeObBu9mVsHDfz3/K+AuP
+      EppLEhwfYSo0x313fZOyd4h7fryVn3/jHwjlstzwssofDo4zMh4EYHxkmGA4BsDwjhdIZouM
+      DO/kDe/5OFu33kGTrXZPZN/TfOvXu/jJPfeipscZnQohVgo8v3MPlfgYj40kceogFg4yPDIO
+      wNToPqZCcwDs3bWNWDrP6N5dXPu2D7F16x10Oqo8+Wytl7nnxz/A19xOaGqM8WCYudAUU6E5
+      snP7ue3/biVbgq99+fO875Nf44sfuIk77/7N6T3kUpYnh8Ns/d5WLu0y8vVv3MVPvvsNjJ2X
+      cM9P7uLxH/wzL0wk+Mr//DS3/s1X+cYXPsQn/scXmdv/e/7t3uf54U9/BhNP8MDTeyllkzz7
+      4i4AknMhNFs7W7fewTtvvIy9u7Yxl8wi1JdD11nO1HuAOsuaugLUWdbUFWCZYWlop6PJAwis
+      XrcREDAYDACoBhM6xUBjUwAAT2sPvZ3d9Pf30dM7AIKI0WBAlmu2E2nh/xVDG2nv7KWlOYAk
+      Kyi6WrjBaAJA0RvQKQqNTa2IwqFwWdEjSxLGhWt70wo8ZtAbjIgCIEgYVD2Ks4UWrwVZXrBf
+      CjKqXsbX3ktXZzcNngbaO2pm29b22rcRSVeTQ5LlQ+ktyGww1r55KKqxbgVabsiKEV/ATEF2
+      IGtlelauJhWP0+pqwOtQ2LVrjAavi+BUEMWgko+Gcbe2kE5lsXsC9K5cTXJmjGRkGqPbx77h
+      YQwGI4V8DoPiYOUqH/mKjFLNMx+N0d7WiauxkZGdL9DgC6CzOPA5rJRyCWRLA9FoFKNUZnjX
+      DgQEPM1dmDNFLA4nZXQkE2lUiwGvrRFNGGEyFMHd1EeHp8psXo9QSFMsZLF7/Ti8HRSTIZCM
+      DK7soYgeRagSjcxitVnZuXMnQxu2MDMxSkuTimh01HuA5cjovv0YdWWSuRKVShWDwUApG2M2
+      ksLncSLoDEgLNSOfy/Lic78HwOv1EgqFqaRC+Ac2E5nYD9Rs8uVSHhBBlNHJIvlCCYPRRLlc
+      JDg1RWNjY23RXilPPDbPxOQEsUiI0PQEVb2TBocZgHK5hGowUq2UqVY19KqecqlMan4Oq8sD
+      wFxwP3v2jdXyrmroVQNjY0HWDjQxM58BrQqSDlmCSjHHxOQEpcohW4/BYKSMHouq1a1AdU4d
+      i6MBn8vKvpGRcy3KKdPc3sHk2OjidV0B6ixr6kOg00akZ+VqOrr7aWkKHDG5knV6dLKEIMqo
+      +toam4MTR1mWUfQGJFFYnEQe/F+UdZi9nbQ2B2hwWlCNJgRAUQ/Gr03sRFlGWLjvYL6CKBNo
+      rk0yTQ4fbpuB7v6BQzIpemS5tni6p28FqsGIcFAuQUKy+uluaqOnt2VxslmTWUSSxMV0JFlG
+      lOTF5Rx61Ygo1ia6siQuyFOb1Da2dC5OqBElDAYVYCEtCz29LfT0r1j4WaaxuYW2/gEsam3S
+      KogSqlpbAKgzOfF77Isy6fVKLW8BvL4ACOJC+gLGw9I/WPaD6RyUTZR16BVdfRJ8uqjuFgrh
+      EcbDafoHhhhq7iY0NUNTi4RJLzMbnqOldzWyLLH3mQfRuTtIR4K09qygkg6jmOzkskX2DO+g
+      q6eXPbv2MLh6NemSnnImjNfeQJ/NwOhMHLOQJ5os4m/ykq/ICEKeqRe309jTi8nmJjQ1g8VQ
+      QrV6mZ0eR7V5sJfyWOxuHOkSTS0SLS1toJV55MEH0RlsuFwu7PYOymUYC6fwO/UI+RLuxi4o
+      aewdnaSzu49kvozHohKZn6etpZmKqCOeg1JwJ5qzA49aJZ5K4wx04LOrxHIaczOTtDT7mQ6l
+      6e7yEpwK0rdqIxRiiKoLo0FHei5KVUiAUFMlQZRp8PlJ5Ms0NLgx2u0Y7H4kSeLAtt8Qk+y4
+      HSWs7iaS+TJ+t525UBC700mhVMLZECAZnyOfzdPeO0RiagRBKAOwcfPlTE7OIFXiOBpaqeaS
+      aIqe6OxMvQc4XfLRGWxNfXR091Mppkkn5glOjiMqCoKsoJMlkvEokan9xFIFgmMjrN18CaMj
+      o8h6A1SrlBDp7O5HkQGqaEgoSq31reYThOMFfF4vOnVhUrowwUxGM7T19WO3WRbzRZKoIKKT
+      JTLJBEaL9QiZYrF5RvftRQMQai13tVJGUo10tLcfKlc6imp1ATAbz9Jok4llihiNJsqlEqrR
+      RktLE1CbsCqqAVE2YjNL5AtlCqk4wakDaJJKOjG3OKEOz0xi97VBIUEiGiEYDC3kKOPyuKiU
+      8lTRIQtlJicmKJYrJONR5kMHmI9nyacT6E1WwgsypQsV9KpKtVKr5JVqFVVVafD5mAsG0S2Y
+      dgEEqdYTmxxe8vFZNFFGQ0RRdPU5wGuFy9uEWS8wPjF5rkU5SUTa+gZJBvcQTR69tv7MIeBw
+      2olFY6ckk8kVOGIyeyJePvE9Ive6AtRZztSHQHWWNXUFqLOsOcIKJOv0x4tXZ4lQLtW2j9Xf
+      1ZnhCAXQKfWHutQ5qAD1d3VmqA+B6ixr6gpQZ1lTV4A6y5q6AtRZ1rxmCiAKoJOO/7skgnwO
+      1VEUQBaOdZzS0QiA7gRxxVf4vc7S4VUvhhtsU/nqe/3smSrwkX8PHvW7Xhb49DsauHGDFVkS
+      CEZLfO6uWZ7YXTsIxGmR+NIf+djcX1ttuONAnk/8Z4iJSOnVinZSqJLIp4bauCbgRBIExlI5
+      PvviGLvimaPiCsBHB5p5c2sDeklkNlfky9sP8EQ4cej3Fc28pa0BRRIZSWb51POj7E+d6Ny3
+      OueS025zWzw6vvfxZu78eDONLh2ydOwW772vc/LGTTZ+/VyKv78jRLUK//Q+PxZDLevPvMPL
+      Rb1GvnbPHJ//QZiugJ5/eM+xz7E8G3ygr5HXBZxsHQnxmRdGsepk/nF9F4p4dHluaHLxzg4f
+      v5qa58NP7SVTrvCFtZ2YF5YZ/7dWD+/s9PFAMMrnXxzDrtTSkpZZbyCLLO4oeyVeqefXSYsL
+      Rs8Kp90DqIrA3ukC9/8+xV+/2XPceFeuMpHMVvjMnbMUyxo2k8TfvNnD2k4Dz+7LsmXAxO92
+      Z/juQ7XFUCta9Lx5s41mt47JubPbCwjANQEno+kctw9PAeA1KHygr4khp4XfzyWPiH+xx0al
+      qvG/d0+SLFUIjCn83ao2Bh0mnowkeX2Tm/lCiS9sO0BF0zDrJP5yoIVBh4kXo+mzWpalQGuD
+      ji/d6mOwtbbu/4ndWf7+P0NE05Wj4rosEl95j5+LemqrNh/eluZvvxOiWK4tTRtqV/niH/lo
+      bVDIF6t864Eo3/jVSRz1doqcdg+wd7rI574f5idPJDjG0Y2LeKwy0/OlxYKlcrWHYTaIuG0y
+      iiwQjJYX40/NlRAEAa/j7G9V0EsiDkUmlDt0iOR0pvahqeGwg2gPYpRFSppGbuHk53S5VhaD
+      LCEArWaVqUyeysIDmVxIq81sOCqtCw0B+Op7/XT69Hz+B2H++d45Lu4z8vdvbzhm/L99i4cN
+      XQY+/4Mwf3/HLJcOmHjXlXYADIrAP/9pAEUn8OmtIR7eluYDN7q4do35jMt91qedt359ko8e
+      Njfobax9wZyIlJCPMcyovsypyPtf72RTnxFZgk+9vYEOn3LUPaeLJAgICHCYAh+svMfqdUeS
+      OfSiQMdChe6zmdA0jbFUDkEA6WUT6epCWgfLeXOrh9c31dbaf7CviTXOM/9CzxWtXh19TSo/
+      fzrJjx9P8O0HYzy9J8vlK00YlCOfpijAxf0mto3l+PHjCe57JsmTw1ku6a/t1trcb8Jtlfm3
+      ++e556kkn7lzlmxB4w0XWY+V9avirDezh09m3VaJN26yMhIs8NJ4nnbvK1dmTYPb/jTAjvE8
+      rR4ddzx8MuvGobO7l2wmw0xw6rRlfzk/GJvl+iYX/7Sxi52xDJf77Px8co6xdG29/HyhhNeg
+      IApQ1UARj2xfylWNTw21cX2ji0GHiUdnT64s5wN+hw5BgJnYofc9NVdic78Jh1kid1gvL4mg
+      6gSSuUOtXTpXxWmuzaUO1oux2VrPXChpzMbLJ1VfTpXX1PD4t29pwKyKfPWnEaonuQvhP/5f
+      lMm5Eht7jPyfX8yftHUoOj/HxZdecUZnUJlyhZFkDp9BzzUBJ6Ig8Px8avH3387GcasKn1nd
+      zi2dPj62svmI+++bnOOZSJKLG2x8f3SWnbGjLU3nK4tGkMPe6/HecalSq9y9jXpksfaK+pr1
+      7A8VF9J6WZrUetOD1w6zxBdu8WIxiHT4FD719obFe06V10wBrhg0cd1aM/c+leR3wyd/EPgX
+      bvFhM4nc9WicT7y1gdUdJzeejkXnic5HWL12w+mKfBR/1OXnUq+NTzw3wpb7n+XhYJRPDbXR
+      aqpN+v59T5CfHggzYDdzpd/Bw8EjW/gP9DUy5DRzx8gM7+72c5XfccZkO9/4+r1zuG0y3/1Y
+      M9/+SBNui8y3HqhNcsOJWm/R6Dw0D1PkQ8pQqWp0BfR888NNfPPDTZhV8YTz0BPxmmyKN6si
+      n3xbA5FEha/+LHJK9z68Lc03fjXPeLjEvmCBsdlje5MINDVz5TXXHxGmVw1YrFZ2v7SdQv7V
+      b+u7zGtnKlPgoYWK/YOxMK9rdHGJ18b4aJ58pcpXdowvxr+kwca7Og95OHk6kuSx2Tg7Yhn2
+      JLIMH+Nbw3Jhaq5EJF5mqL3WoL04mmMuWTMq/G53lkKpyvtvdGE3Swy0qLR4FKbna71/Mlvl
+      Sz8Ms/XjzaSyVb78ozCV03BICa+RAnzkjW58dpmP/vsMyewhSSvH6CNfNmzmoRcPmQ9/8nji
+      uHnMzgS5+8ffPyJszbqNmC2W41b+qqbxcgkO2uyP1aBYdBLRwqGx7Hyh1mWbFvrffpuRYlVb
+      /PB1MK3Cwtt57rDh0gPBM2/SO5/4yq0+dLLAjZ8do1jS+M5fNvOxN7n5/A/ChGJlPv6tGf74
+      OidvucTGE7szjIeLi0OggFPma38S4MEX0rR4dNz+gUbe9y9TFEqn3g2cFQVo8egoVzSC0TI3
+      X2zl7ZfZuf0Xczyy/UhbeDBaJpWrMNCiLoYNthmoVDUOzBZfnuwJqVQqZDOH0rfZHXj9Ae7+
+      0Z3HvSdXqTKVzdNtNSILAmVNY6WjZok4OLFtMurRgOlsgYlMnhV2M4ooUKxqdFlqX6+D2Vqv
+      9Lm1HZhkiT94aBsVDVY7zWiaxs7Yhf8N4FQIOGUG21S+9UBscU73y2eTvPVSO1/4YRhNg9/s
+      yPCbHYd6yLs/ZVxUgGC0zIf+bZrhqQKiAF0B/WlVfjhLCrD1r5oJzpe59euTfOxNHjRNY0OP
+      cXH8XtXgY98Mki9q3PtUknddYeer7/WTyVe5ctDEI9vTi93h6eJp8PL07357lC+pl3P3eIS/
+      HGjhaxu7GU/nubnVw654ZnF4cvvFveQrVd72m538airKxR4b/7Shm+2xNG9sdpMslnl8YSnE
+      L6fm+UBfE1/b2M1UpsAbWzy8EE0vKtOFzMHvPIf34AfH7S8fnsiSgCAI5EuHjwZq1iFBgJWt
+      Kht7jNz/+yShWK3HVXUiqeyhOjE8VWt0qhrsnX4FJ2sn4FUrgKZpPLsvy77gISFeHM0zlywj
+      irBnuqalAoceyOEjn6/dHSFf0rhqlRlZgh8/nuDr9869WrEY2Tt8UvG+PzqLKAi8vslFm1nl
+      kZkY/7JrkoOvZmcsTWFB4F9Pz2PRSbyhxc3NLR5GUzm+sWeaRLH2kv5zZAa02tflTouR387G
+      +V87x4+T84XF2GyRSlWjv/lQb97frCeZrRBNldFJAk0eHYl0hXCiTL5Ypdt/aFdbg01mNl6m
+      WoVuv8JH3+gmkijz86eTeGwSPofMfftejRe1Y3PEsSgG05n/0FDnzJLL1JZnLMV3ddufBbh8
+      pYm7n0xiUkWuW2tm6yNxvvqzCJ0+hXs+3cZ3HozytXvm+Mq7fdywzsIPH0tQLGu88/LaMPlb
+      D8ZwWiTu+x9tlMoav3gmyYYeI31Nem79+iQvjp7Z3lRSVPNnD17U95kufZbynuDfvpTBapK4
+      qNeIwyzzs98luO2+OapabXlDX5Oe5/bn2DVR4MnhLBajxOZ+I51+hXueTPKNX0fRNMgVNZ7e
+      k6XNq3BRr5F8SeOrP5vj8V31HmDZs5R7gPOR+o6wOsuaugLUWdacl8ejt3d2M7Z/H53dvczO
+      BKlUKsiyjMPlJhGPoWkapWIR1WAgk0lTLBSw2R01Vz7lEj5/I9H5OXK5LKpqIBG/cBal1Tk1
+      zksFEESB3hUrKRYKtLZ3ksmkqVYqNecMBiOCKGCxWEklkxhNJoJTk9jsdkqlEhaLlWQygaoa
+      sFhtVKsVkskE2svXYddZFpyXVqBSqch8JEypVKKQz5PNpBEEEdBIJuLIOh3FQoFUKkEhn6dY
+      LFAulxfDNU0jl8tSLpWQJBm9Xk82e36syzmXViBBEGjr6CKbyRBoakGSJEqlEna7A4fTjSRJ
+      WCxWisUCdodzocctY3c4EEQJvV6PqhqQJRmH04VqMOBwuKhUKqgGIx6PF0mSsNpstfP+DSrF
+      YpGO7h4kScZitaJVNRRFT7lcQq+qVMplrDYbiqJHkiUcDifFYrGWPyymcTzOyx4gnaqtqTle
+      wdLp1FFhmXSaTLq+JOHVYjKbaWyuVX6zOYDD6SKdTqGqKqAhyzqsNgflUhGD0cj05AQ2uxOj
+      0UShkCebzWCz2Ukk4oiitOhSyWq1giBQrVaRZIm2jk5KxSLp1B5UvYFYZR7VYMbd0MDEgTEc
+      Thd6VSUUnMbl9lIuFxFFiUI+jz/QyOzMDB3dPYtpHI8lrQCqasBoMhGPxXC6XCTicax2O+VS
+      iWw2g9FoQpZlUqkkZrOFVCqJw+EkPBtaTMNoMlEpVzBbLKSSCUxmCzqdQqGQR6+qZDMZjEYj
+      +VwOs8VKeDaE0+WmUq0QnYu84lKK5YSmaRwYHaFUrFVuk9lCIh7D4XCRy2bIZNJYrDay2Qz5
+      XLa22w6Yj4RJqyqapiHJMslEnHQqiV6vYjAaEUWBbDaDIIhIkkQ8FiWbySz06pBIxNApCqHg
+      NHZHbUddLDqPJNUWISp6hVw2Qzo1D4AoiTjdbsKhmcU0jseS/g7Q2t5JsZBH0avMz4Vp7+hm
+      dGQvDpebarWKINS6ZU3TEAQBvV4lk04TnZ+jd8VKXtrxIs0tbYiiuODLtoTd6WJ+LoxW1SiV
+      aj2I2WJFVQ3MRWYxGk1YbXay2TTZbJbZmaOPejmX1L8DHI0ky1TK5VeOeAyWtAKYzRaqWhVJ
+      krHZ7SQTCVLJxEKrISIIIpVKGVEUsVhtlEslctks6XQKRdFTLBZqaVSr2B1OstkMVpuN2Pw8
+      mqbhbvCSSibQ61VKpZrVKBmPowEWq425yOwZ2UdwJqkrwJllSStAnaOpK8CZ5Yg5QCF3flhC
+      6tTf1ZniCAWoVl/dGvw6rx31d3VmqC+FqLOsqStAnWVNXQHqLGvqClBnWXPEWqDlzMDaTVw0
+      2IGoGMiURAIOHYnjbGYPtPeyZV0/I2MTR4Q3tvciF+PkF04ocHhbsCslSoqVm66/lkouTjSR
+      webyIlVylCr1r8znmroCLPBnf/oett75Q/7wXe+kbA6gxvdSUFyYjSoup5O2xgZm52pn+Xzw
+      /X/KvlAKOTtPb283sUyZob52ejddhy45RktHN+FYlje+492YUqPE1VY2t6us3fw6QtEE3X0r
+      KKci9A0MEJlPsWHNANPB0CtIWOdssKTXAr2m6G28/srNjMZK3LDSzhfvi9Nz5dXcfHk/WrnE
+      7MhOdu4eoQrc98jveftVvbzY1MnmgUYGnn2U1lWXMTM+Td/Nf4jH08Dlc3OUSiXCC8mvu/gK
+      7v/Vr/mLD3+Ip7btY1V/O+Vcmg2XXkWL30Mhsp8XDiRPJGGds0B9DnCQQpy7f/0bnn9hN11N
+      bvLAnh07uHRDNz/8wb24e1ZhlGvtRZfXwCP7ily2ys/O555F9bRgkEV0Eig6HcPbnqFQlQmF
+      DrXqT//2//GTXzzCXGiScCyNTqdjYnQvFU1meNszJPP1/QjngvoQ6CB6K1tWd/HYY08Ti4UZ
+      m5ihko2TyZeZmM9il3KoVgcTk1NoqpMNHTbu/Mmv6Gz38czz+9AJBbZt38aL253wraoAACAA
+      SURBVLbT2tLML375AH3dXTz//AvE0nlK2STBSByA8QPjjOzewcpVQzzw6wfp7GjlyaeepVTX
+      gdecI9YC1amz3KgPgeosa+oKUGdZU1eAOsuaugLUWdYsaQVQZAFVJ3DQVZSwcMr0QeeSx3Ay
+      eQQOy7E/c5hN0isWXBRBJwlHOHw+6G5MJwnHzduoFzGq4jHTN+proZIsoD8Fn1aCJB/X15ls
+      thw/TJQQdYe5e5X16Iznx8kfrxXHNoMKwmn7lpN1OqqnecaOIAmsbDYs+oh6+zVe0DRWtJsI
+      h/NctMrObDjPpRtdtJgFvM1GEuEia/stUKrS4FEZaNJjMelwG0VMBglJEulvNyKWK/i8Rprt
+      Ev4mI7FQgZe722tw6qiWqpSrsL7HhCKDpJPodInESyI9bpFIGq5ZY8RsURAKFZq8esqlCg1u
+      BZu+dgR4pQqSLNIVUKhWNdq9CplMhXX9JkwyFGWZBrmKy61H1jSyxZcZ4mQVS2sjxXgC0dmK
+      f0M/CBKabMTW2UoxmcOxaohKKoptxRqqmoQ54KGQKeIcHMTa0UL6wDieLVcjqyqOFb1UUZAt
+      NmSpiNrch6KKSNYGTF4nhejyPRjsmA3hwNAG3G43bl8TAb8Pf3M7vQOrsFnNGCwOmhoDODx+
+      /D4f/UPrafD68TbUvMX3r1qL3+fDardhdfqwmNRjZXFM/uAqP/d8bgWXNNdaLVkSUASN/9qZ
+      5uKVVgxUyVeBUpm5qswKv8LmVTZ27k2xotPMYLPKsxGNNrVCs9dAs0fPQI+ZvftSrOgwo5cF
+      Llpx7K2Eoirz2Xf5eNfm2u+CUGvps+kSOlWm169jeKammLIsYFIE2lpU9KJGb5OKLAqLZ+N7
+      bDKxVBm9TqBUhWIZBttUtLLGyHyVgYCM168SMAj0Nh39fAI3v4+Nt30bW8BCNTZNPlPF4G2g
+      4eItCGY/jt4WqoU8znUba/lt3oLS0k/zFRcRe+E50BkXyiAiqSrlTBprZxu5VAXLio1I+Qmy
+      kTiezZsxdA6iN5w5T5rnG8fsAQqFEk0BLwgikk5BpEKhWGIuPIveZMHpcuK2e0CokMllKJaq
+      2K0motEYNpsNUZIxGB0oUon5aOykPfiFokWi0TwPbE9R1qDFp5LJV4lG87S0WXhxR5xMGRxm
+      me370rQGjGzbn2V1u5Fsrkw0U2EiWsJClZwmkCtVyecqHJgrYTfL2Cw6ZDQmoiWi0RKHnyOg
+      latEs1W2jWRJ5DVsJplqVaNcrhIpgFvWCCYrgIBWqTCf0Ygmy5gUiZloCZddRqhqRNNVimUN
+      i02HCdApIoIG5YqGwShjVQVCsTLpVAVZLzIzXzrCXy5APjJLYXaMuRd2IqgWVJcdQRTIRqII
+      Wo5CMo9OkaiWS5QzOUrpDFo6QnIqhqWjDUnSSI9PIBtV4ju2kZ0JIRkMFGIppHIcxd+FJEMp
+      W6YanyE9HWa5cswPYXaXF0krki8LKGKZbK5AWROxGnVkChpuu4lYKodZlciWBAx6GaFaIjIX
+      xdkQoFrM4W1qYXR4FzpZIJs/NX9fdeq8VtS/BNdZ1hxzDmANNLNxcA0NDgNGg4ooSUiiQFdv
+      Pw67FVWvIEoSoijQ19ONwdtJs13AaFBrE2hAFCVkWaKntxNBqDlFMxpqTvKMVgeqVDvUSlVV
+      BEFAZ7JjVkCWJQyGk3OGXafOq+WYPYCnt5/N3gAJXQmzLDEZSdPkNjAdBaOcocHtZiyUIGCT
+      yZR0VO1eAqUxMmWV+3/zApdsWYeUS9AY8LN3YooKEjpXB01Khm2/fwxsrVTSEVRbIwaHEb8g
+      MJKXGbTFeGZnnDWbVzH20ovs3Dt5Lp5JnWXEcVaDakxPBhFEyCSTpHIlMqk4kbkYFUkhF5sh
+      na+QTkSpinqC4yPMzc2TzuQIh0PYzCaCkSSFfJbgbBid3kImMk2ukGNycoZkJk8qFsXu8aGv
+      FhjZf4CZuXkK+Rw6WSCdqxCcmiRXeLmhsk6dM8s5nQPIskz5NM90rFPnTHBOvwTXK3+dc82S
+      XgpxKphMpnMtQp3T4Fy/twtGAbo6O861CHVOg3P93i4YBahT53SoK0CdZU1dAeosa+oKUGdZ
+      c9SOkaFVg+dCjldNV2f7Scc9FZ9SSyHuqbAU5H01ZfN6G/B5vad17+lwlAJs277jNcv8THOy
+      suv0KqXCyfn+WgpxT4WlIO+pxH15gzs7G2Z29rVbnn2OhkASazesp9HrOmGsgL/WEqiqit7i
+      xKw7YfQLElNrO3p3w1HhjS4dja5TfyCCABt6zHjsy/BhHkRS6OnpRpHO2dmgKn09rSSzRS5t
+      aUV0O9n+q2cZunE91dkMokUkHc9hc1i47HXXkw+P88JElDZDE3nVgU0qU9IpVPIwP7OPl/ZP
+      HTcnSaqtLk0fw0m21WolmTz2eZyyLCNJIodvVTGZTGQyh3xznej+M4FsMrH2y1+nFJxm5v/+
+      62K4Xq7ywctr5bn9UTOF8qF2TBSlE7pPGmyCr92i8uTuFH9828Rx413QONuxVUL4mjvOlQJU
+      2Ln9RWZm8/i7mklFUwxuWoVYyfPisy8weMVFyIoO2WhmZiKElg1j0BsoFnPIJkjOzTFW0HCX
+      yjS0Np9QATZvvpjZ2fBiRfW43RRKFZKJGG63i8nJKVpbW9E0jWKxSCQSobWlhXgiQUdHO9PB
+      EHpF5sCBcVauXEk+n2NqagqXy0UikaS7u5tMJkMmk6FcqaKTJZqaGhkeHib6KvfaVvJ55p56
+      AimZwKDXYTRZakvLqbIz6qCQmGRmOkj1sNVcsk5PuVQ4bprbMyJP7vbwyIvxVyXb+Y7T46Fa
+      sV84G2KGVg0ecw7Q1NTIpk2bmJkJYbfbmZqapFTWMBn1lIolenp7CIfDNDR4CYVCFIsF4vEE
+      siwTj8fZsHEjdpuV+3/5S/xeH4ViEZ/Pi8/nY/eu3SCA0+libGyMgZUric7PYTAYeeGFF4jF
+      jq8AB8fJgiBgMluwO5wYTeZFp96HOwBPJRMk4jHSqVfubZbCuP5U5wDnbt4pXPgKcCxeyxcv
+      yTJWqx27w4leVRcrtSTrKBVrLXUqmSCZiJNJp04qn7Mp72sd99wqwAXkH0CnKOj0xz6BorOj
+      g/HxcVrb2pAliWQqw8zM9Mmlq6udo9PZ2Ul0fp5Y/Mihg8/rJTQ7uxi3ZsITCM3Wjka32ezI
+      skx4NkSxVDwi3dLLhirHk/9UOCjv+RL3XHPBKECpWDx+q6NVqZRLKLLEnj17GFq9hhV93Tz0
+      0ENs2LCehoYGdu8exuGw09zcTCwWJ5GIEwqFUPRGVvT3kE6nafR7yWaz+Px+gtNBtm3bRm9P
+      F02NAebmIugUFZ0s4vP5EYUq4+MTzIWP7/nlbJhBTzXdpRD3XHJyZlBRZdPGocW9varRiCyJ
+      NPq9qEYjkiCg1yvIskRjawdXXXUZQwN9GFQFSadHr5MAM93ttdbRbDIiKyoGvRW/zw7A4PqL
+      MMng9njQKzoGBgdQZBHVYEAUBEwmIwJgNBrp7erBaDQiCAKK7pXNedlsFpvNRiad5uqrryIa
+      jfLEE08AkEymGBnZj16vJxKZIzwbJhgMsn37DmRZh9PlJBaLMTk5SSQSIZ8vMLJvhLm5CPl8
+      nmw2iygKqKqBpqYm0uk04XAYk8l8XHn8196A98prF68VWeDGDVZ6Gk+95TQoIh/4Az8b+44+
+      Ie5Coquz86gwg9F4VJhqsrHp4k10dzYfEW6xO45q7Y0G48n1AOsvvZSVbQ3oJIVCsYJi82CR
+      ihRLRQqiGWPVgE6d5vGn9jI9PorfbcHb1ILH48HS0EI1OcO9v96Bz2sng53rrljP2P4Z8llQ
+      9TPMhPMM9vfTaIWI2oZn7lmUxi7ctgDtfU2MT8QxaUGyxnaqM9twdF/CFjFBMKsx/+KjPLM/
+      ckL5JyZq5r5IJML+0dEjxqgvvfTSEXFHR0cX/z5w4ADTM6ETtma/+92Ti38P7933ii2fbLbQ
+      8ycfRBQlzLEk1WyWNkeBm9fEmYrruOt55wnvfzlrWjU+9mZ4bm+Kt31pzynde96gszG4bgCd
+      DFQ0SpKRZr8ds83K8PAETR4VVDu7XniO2fkY+VIRnc3DZZf4yZRlVPJMxfPMx2O0r70Yk1nF
+      KSbJCu6TU4DQ/l188/EnaGsNYBSyCGWYz0TRGc1UhBzzmQLx9BSSWOtQgsEQwQWnb4aZKORj
+      QAbJ2IfHlmT38F7mQjEkCfQGGZvHxX3f/y42XxMVQ5rp8ARtShOJ2Qli2TjhUBgKETBGaG30
+      MPf87zDaLEzPhEgHT1z5lxrldIq9/347kiwz8+wTaMCEDLqckf2hEiPB8VNKb3pEwCW4eXbv
+      0d85LhQCjS52v7iPUlWgJeAiltHIZVIk8yXsZgO5QpHQ1B7y5dpXm3QqTaGQI4WIze4mnYyQ
+      r6j0D3QjGGRKuTQ5m4XY1HTdCnQ+xD0VloK8dSvQOeBEVqCj4i4B68fZspQsBXnrVqBzwAmt
+      QMeKf57FPRWWgrwXlhWoTp0LlGMqQFtXH2vWrSfgsSIAkmrH5zbT09uJyWRaNIeyYBKVBEAQ
+      MRkNDK7eiNth5/KrrqSjbw2DvQEEWLhHxGgyIgo1c2ZfVw+Gg+ZMRYdisLBlw9rF9EVJh9Gg
+      R5B0GFQ9gYAPt9uFwWhEFITFtJYLitPFmi/8E81veDOCICIIInazzMdubuCa1RYEQURcCH+l
+      f7e+zsu3PtKKx7ZEV4UKChsu2kB3R3Pty7nBhd9tpKerB51OhygIiKK48FVdrh3HKSuoisy6
+      DRdhNlu45tprWTO0YvH4TUEQkHR6FFlElmXam5uPPQTy2q08/ewzXPOOP8fy0DdwrbkGcf5Z
+      cPWycsOliOHdJOQm5OwkFaOf8eHfYw90I+okvMCenSkSiSSjk/PctLkZk30VpcIuKtIAzYEM
+      yZIHXWo/irOfLZdvZCKmUdj3MI/uCJEvwdp1qxA1AZu7AaGUo1SR2T86Qk93C4m0Dqe1SC5r
+      x+5KEw3neOLp37+2L+ccYfQ34li1BqPJgmm8tgCw0VqgvzmK0WxhSnPX1jufxHn0N11SZqgZ
+      2rx6IomldwKf3NBBZvJFjL4VrFvrxOBbgRx5mmTRwWXXDGIzF8mkylQT0+QNASaGn8HT2IFO
+      VLDZzWzPpJiLRimgsmnDWuLZAlIF9CYzhaKEKkVoaBo4thUo0NpJo9fF2Mh+unq6CIfCmE0S
+      aQw4DEZmJsewGEVE1UYZHcVUhKJgpMVrY2pqlunQDD6/n9BcFp+1BIqLptZGUpEkycw0CHaa
+      Wn0U4nFkq53Q7ByFyH6qJj/tPjvRPDQ6VUYngwCoJidKNYNisjEfidDQ2EIiNE++PAcYmQnN
+      LA8rkCBgXzFINjhNMTZfCwK6AnrCiTKJTOWk022w6ehssvDUruhJ+W947a1AIoNDQ6TnZ7A0
+      NJGOxTAZNOZiGl6/nfnQHCaThCbI5MoC5cw8ompDlaokElki8xF8fj+lchmqYLLacJkVJoIR
+      RFFHY3MDmVSubgY9H+KeCktB3roZ9BxQN4OeXRmWQtnOBheMAtTNoGdfhqVQtjNN3Qx6nnDQ
+      9akogkE5PdOXxSAh19/4ERyzB2hfvZHGap6irLF7ZBwBDW9jK36Pme0792IwmnHaLOikKvsn
+      IrT7HRyYmkUTQDFYsKkSZoedueA0wfA869atI5otkJsN4/JYmAxG0AQwWR1IpRx2r58DwzvR
+      Wd0EHEaaV6znxUd/QXNnP6PRLM5cGLPLw+RcGrNeoFKqYGvwMhucxKLXMTZ1/CXHFwL+a2+g
+      508+yNh3/4Nryr9jsE3hf9+fIhQ/evomK3p08tGmzU6/jm9/pJmHXkjwiW8feA2kfvVs2XIF
+      xVyU4b0HQBBweRtwqCIj4zM4PT4sRoXgdJBAYwPTE9OUNdAZrFiNMgadxEw4RixeoLfLgcFk
+      J5GtkknOkc3ksZoUNO04CqCoCnueeob+LZfS06+iSBKlioTb5+d1LgdjwShIApPRKm/e4uCR
+      iQrXrHYwVZaQyhVyosCu4TAr/SLBMDS3dxOoFsg7rEwUq1yywsW8KJFIpPF1bsSWGqfS7Mfh
+      bSFTqZKaGmU2nuOi5nZMgSqNOQcPThZ5/WoXz0QqlFJFqqG9XHzTu9h19zdf49dyDlio52ar
+      HSVrQKCCw+2jYjy6oh9vU7zDpVGzGZ0/xCJhDBY93R2diDqFsixik0us7DcxH89TrFTZcPXV
+      PPObF7jxigF2B/OIgkgyk6GiScTiMcBES3snWlFFq+yj/fLrmH1pJz5DgmBCObYVyGB1sqK7
+      jZHdO7E0tCAUkpjdfmKhcWLZKmadRqGiUSgLmPUiAa+LA6EEnY0uxiaCaEA6W6LJb2NqOozN
+      ZqNYqSAJOpq9NiYiKTobXUQzZSq5BHZvE+N7diIY7DS5TEyHo6TTaWw2K9liBb0k0t7s5cBk
+      iDJQTKfpGRxiemKUQipFoXrhW4Fks4VyOoUogl4WyL3cufZJpGsxSOQKFRYWTS6Jsp3ovbV3
+      95Odn0Y0OpApY7RYCE+NUxV1FIvlmj6LOtqaPARn4/jdFiamQwvthYAi60gkUxgNOiRJxu72
+      k4iGaW5pJhGdR6tW6mbQ8yHuqbAU5K2bQc8BdTPo2ZVhKZTtbHDBKEDdDHr2ZVgKZTvTnDGj
+      mG5hb67uBHt0dQYTZr20eC3pFGyWQ/s6bTYrAGbL0ftpTyb98wVRr0fS6zGpr+7x20zSK0da
+      JlitVhAVbJbj+5i2mM2YzYdcMrka/GeuB1i/5UpiYzu4/LrruPf+/8JjVdBbnUSnpymIevwN
+      dqomO+bQHlLmAKO7t7Nq85UkJoYRzW4UCszOxeno7sXfYGMyGCUXi+Hx23nyqRe49k3/necf
+      fZjXX7eFR58Zppor0NThIXhggv0HTu6Ik6WAqNez/p9upz+zg/XjP+Xe35d4fuLUFeHGNXr+
+      6k0OvnDXBD95bP4sSHp+cfW117Fj1y4CDhOhVB4xn0IwWJmfnaHBZqaiaZhMDsLpIl2GPNt3
+      jLBu3eoz1wMUU7MYA90ER/fS27+CoVUrKZcqWHzt+BsDbNm0DofFyPjkFI1t3bQ3NzC6by+D
+      a9cSCPho8HpxewI0BjzoJIWNl2wh4PVSzmfp7u4iOLaHvpX97BsPsXrdOvp6VpGLT2O3+85U
+      EV47DjM7iJKETqec8j9Rqrf+h7N3bJa+JjtFcwPr1l/Emh4Xu7e/xOWXbcbsbaOlsVZPpibH
+      6Vy5GosEByZCS8MK1NrSxPjE8c/3PBnOJyuQqNej6FWkQopMofqK8Y+HzSSRyBxp8z/XZTvV
+      uGfDCiSKItVqdeFvgWpVW/wfagcmVyoVRFFcGpPgV1v5zzeqhQIVBPKvovIDR1X+OjUOVv7a
+      39oR/wNUKpXFeEtCAc4EdTPo2ZVhKZTtbHDBKEDdDHr2ZVgKZTvTnLFJsMvbyIYN67EYlMUw
+      n99f+8156LQzR0OA1atW4XEc/+jAl6Oqr/7Q2PONRpeOzr5GTK0n7/vsID1NBnqajm8OvBDx
+      NrZw8UVrj6jQHpcL0GGxHKo/zoYAgyv7OGhCOGM9wPzsNG1+H87mXq7tbmAuI6AJFVoDLhLJ
+      MuvWr+a557fR3NPJyOOPseqSS1hpMhCJpGhymihUi1RKVQRFIR0N4w60E51P0tFiIxnPMB2J
+      odObcFpEZhJlvIqIapYJBsO8sGP3mSrGksCgCHz8zQ0oVht3D32aPV/8MtV87qTutRpltn5Q
+      pVqtcvXf7CSVWx7zhNnpCZp9DroH1+DR61EdOnIZAdN4CP8KF5XxWfZGYnjcdnbumeUNN13L
+      7l37zuwQKJVO4XI6mI9nmJ2NolrNiJpMVSsyfmAcraqRTmYZXLeWdCxMeE7A5fSSymSoyhJO
+      s4FErky1UuHAyDCCzkgwbkUtJBFEEUWWyKVjTIWyRCLT2Js8KAb7mSzCkqBQ1tg2msPc5if0
+      7HMkIiGonFxFLuYUHnq+5ocgV1gelf8gqVQas91LoVBiangUgy2ALElUKyX27h2larORL2ms
+      Xd3FxNg4eycTS8MMCtA7sIpUZIpgOHpa959PZtBTjXsqLAV5z7UZ9FRYMpPgPS9tP9ci1FmG
+      LBkFeLXUzaBnV4alULazwQWjAHUz6NmXYSmU7UxzimZQPT6vHUm10uA42jtHwOc/4d0HzZke
+      jxtPg+eI3w6aTI8I89UcZfv95+F6n1fBQY8xq4aa6LjlfSh2xyve0+RW+NibAwScF0ybdkw2
+      X3wxeoefTUO9taMOxdoRiQePOjQYDbVjNUUJnVwzdup0Ohp8PmRZoqkpQFtnF4okIYnCqfYA
+      Vt70hst4ZrhCkzPNMw88QceWS6nOzWK0qOgNXq681sx0JE15boLG9ibuvfsX9KzejN8qIcgi
+      v37gUf7gne/l+V9spbP/WkhnsdoLxDUf/Z0hREsDE6MjRCdGuOjSq5kYeYm+Vh+TqbUUK0Ua
+      xBSRogF9JUXZ7KY0voPf7w2ehUd97ujy67l5s52wtZOHL/pDTIUSuZ0nnijeukXgHZtF0OBr
+      P7twnWWIBg+X9ueYs69gqCTR19fEsztn8TqrNDQNUMxFycYLxAo5XEqFR54f5bo33YS9EOSB
+      3z6HyxvApgiYbQ5a3QYkRTV/9uSz15Gv5ElFY1QrJfxNzQiywP5dw7j9XvK5EoVSlgNTYWLB
+      YSR7O+XYBE5fK8VckmJVZHJyCq2YAcWA0WQkly0TjoxR1IyYFZiZmKSjrZkde8agnKVcrhJN
+      FjCZdGQqMsHdT1O1+jFJUAQmXtpJplzz1jg7Gz6pUkiyTLVSXrJxE9kKxbLGk7uzzEYyTD38
+      a+KhaZKxueP+G5mIk84W+emTSRLp4jHTXQplezmn8t4AcskoBU0kOhvC4bASnBxneN8orgYv
+      0xOT5HNpxkfHmZmbR1Ek5pM5DGKFqalpSsUi8UScWLqAImgkk/GlYwZ9tdTNoGdXhroZdIlT
+      twKdXRmWQtnOBheMAtStQGdfhqVQtjNN/aC8Osuas64A3e1dACiqAZ0koNfrD3nrkGrZS5KE
+      0VhbvTi4biMr+7tqXmH0OlauXY/DJGM0GkGQMBnVBefZh5xmn4/oZfGYzrHtg0O0ve0PEfXH
+      H0YsF+fYZ4Ku3lr9aO3sweFy09Pmx2p14nE7+P/tnVtsHNd5x38zOzM7s1dyL1zucnlZ3Sjq
+      LlOxHcuKlLR2UqdBkoemQQsXBVL0oS8p+lC0KNqi6OWxKAo0QB+KokAvQdDWgVukqeMGtSU5
+      dnQxdaUkkuL9stz7fWd2Z7YPK1KSJVlSyhWX1P5eONg5M/jO7Hw8e/7nO9/XFw61/idQb6iX
+      ielJTnzuBJZRweFykiia9DtFElUTO+B2iyznLabOvkugJ8j0lXlOfe4Es9OTBIb2cyDmY+p2
+      moGIm2S2hsPrYiGpE7bncHgD3Jy81epubDj9QZmvftbD1KqN7164m6mg983fwLl3H0oqgz47
+      89Br90Xgt7+ucuZqnp/eKDwji7cmsuZm/55ddIdClGIHEKfeIXryNeyGwczMeOtVoFBkkGjQ
+      yXKmilVKUTTqyJJC2Wjg89gZioa5Oj5B1QRRL+Hv30m4y870chaPYpKtws7+HqomJOMp3KqA
+      YXNSySzjiwyRXpwlkc1vORXIbtcY8FvrlV3WULr9OCJ9ZK9feWSpI0GAY7tdzMT1B8obtUPf
+      2lEFWtsHfC92V1frR4D40izxB9apSgAsl2B5OX7fmaXZKdaKpa/FhV5I3m1zb+tEZvPks/8v
+      Fg0mlvQHPjcyqfXyR4+i0YBz27gyfCv45MsPoBez20cF6sigrbWhHfrWCraNA3Rk0Nbb0A59
+      22ieuQzqD/ag2WXc96SoexiPO9+hGTSnSI/O+S85nQifkkDL8xxWjBk5dJj+cM968OUzHwG+
+      8rWvUlpdZHohTsNmI5/N4et2kyoYRLwqSCJL8wscfvE442M/JV+qgiUSHYxSrYNeyuHSZBZX
+      Uvj9fpLJBMvL27tCzMNQJIHf/0YIQRD4zrsmNbPpCDZJwawb2CN97P69PyJ74acs/MPfPXD9
+      jh4bf/tbIX50MbNlKsZsBP5gLz4VSlKQnbG+Z+8ADcsCoQE2B+EeDV+oH7m8gCN8iKWz/4h7
+      4DDh3iFsNhs9oRBD3SHMXJpUuYBct6EFQ/jcdmRvPx5bCblRfS4dYB1BwK46ENcdQMKsS8hK
+      cz4kijbs6oOh67L9vgyNzw1mvUa1alC08tgdVicYbiu0fRRrP3+M+t2v8N77Sk4nZrVK4xEb
+      6v1dTnL50nrFmI2ytx1l0EexbSbBzyP3vvgPo14qfer5fMV8opd/O7NtHKAjg7bWhnboWyvY
+      Ng7QkUFbb0M79G2jaQsRbGCgf/1YVdWH7g9u4iDc6wVBobd/gAN7Y8hbq/IniiSwr19F+YQ6
+      6RyMPTYNoqaIHN/vRlXa4mvb8jgCm6ACfZLeHfs5sieAp7uXw4f2UEnEiVdNorFhPIpBbzRG
+      enGGTKWGUXMytFNj6sPb9L48glwsI+ZTXF7Kb3Y3npjXjrr5+itd/OiqwPsTzccvqho7/+TP
+      AZj64z94ZBrEN08o/OZrTv7y3xb5zn8sPzObtyuH9u5qAwfwu1lMGvT1upibuEG6WMepiZy/
+      ssjJl4dYmL5FejVH1oS+HieFfJ65uWW0XT4St5fwaA5g6zjAxJLO5JLOrcUG5eKdirblEsmP
+      PgCglE7SeEiha4CPxiVGBy3Od+KANoTpW9c7MuhWaPs0tIO9W0kG7fyY7PBcs+k/gTaKjgza
+      WhvaoW+tYNs4QEcGbb0N7dC3jaZlDrBjzwiaoHPt5m0i4RBLn9j4so7s4uCuIAspncFeP/Nz
+      06SyD07yBLubgBvSWROvwyKd3xoPeCM5vq8ZIXv2+oMrvKLdzsDXfonCzRukxs4/cD4aUPjG
+      yQDfey/JQvLJEmdtZU783OtMXj6H3dNPl9OgWjdJxbPY5QYLiQIH98Vw5zmFxgAAC41JREFU
+      dkdb5wDDe/cweeUCLx0/yWCPk9nVIt0q6DYvPrnC22eu8erBPgraAM74h9iGh7HnVjlw5Bgz
+      i0lOHDtAoZhhbDLBwbDMTNVBLCQz/pPb7H5hgG5fmFwyzszEDa5Nbf8qk05V5JsnuxEFkaxt
+      B5Xa/dM3dfcewm9+i+r0bZb/5q8fuP7XPyfyK6/Y7qRO3F6pJB9Go2FRdw/hry0S2/MSYzdv
+      8+LwMPPZJJIvwuJKmZORTOscIJ8v4nK5qJsm5XKFSlVnMOhncilFIreCVa/REGwUs6tk42kg
+      jybbSWcyqDKsLC2SyaWZXc4jpxMwdJyVhSUUl0q5XKSUu8XsYpodA/3PhQOUqhbffS+DKIhM
+      TiUeOC8uzVJ22ClPTpKbeTBJwN/nJLJJN997P/kszN104stx7KVl9O4ezp6+wIlTL/HBO2dw
+      eBRm5lYZGR7kndPPYFP8GgOxXciNClMziy25f0cGba0N21UGfWaT4LnpyZbev6MCtdaGduhb
+      K+ioQFuk7dPQDvZuFRWosxDWYVvg9XhQVBfaJ6MM78HtcmJTNCIh//pnGzMCuEMc6bWxVPdh
+      z0+SqYqUylUURcIwakiyHcEyGNi5i2yhQsTvYWL8OlUTBEDVNMrlCg5NpaLrSKLA4FCMyckV
+      BvsVEqkqlUoFSZJQFIVSqYTDoVE1TOy2BhW99lgT25WAx8aJ/S7ev1YklX98WdM1uVOfuMbX
+      +1Y4P1HsZIcDvvT6z3NtvorTuEG1bqdUs+GUDFaSOZxOL41aEX8wSF1wUErOEg33gWhtkAOo
+      XYwejuCzhtDSdnpie5m/vUK5XkWoVYjsOkAlOcdCOk8yU0R1dXHq1WNcz1oc6fJwM1Hm868O
+      ky+USK4WOX36XYZ2j+BwRBg+EESuSyDq3JpPY6YSjJ56hUK+TDG5QiqV4MMLVzekG5vBif0u
+      vvyiF3+oj7Mz3se2t+/cif/NbzGcHeN36v/EhVsFfvkvbj4DS9ubeL5Ol1ynOzREJDzEhTMf
+      cXWxxOujO6gqIfIrt6gDiwtzvPTCfnL5Oqqsb5ADlJL84L04uniLqF8lpd9iZXqBmUSWg8MR
+      Eh9/TK2YoGIKNEyLWk1nYjVFtL+PgmnidcGP3j2NS1NYSeUp6ya3rl1ibi5JrhikNxAksbrE
+      /GqZ0UPD/Pi/f0zA52I5UcCtPXrI2wq8f6145+/ik40A4xcZkOD6xDXoW+lEht7hf995e/1Y
+      FAUsqylu/uePl7EaDQQa65kmf/DDJRAELLMNNsXLskSt9mTldD6NNTmtr68PAJ+vG1mSuT4+
+      jq7r2O12dF3HZrOhOV0U8znsdzIwOxwOMpnM+r3WPq/VaoiSvOlS4dPQDtJmRwZ9Cjbi5Ye7
+      Mmg40nSAYCCAUavh8wc4cOAAhmHgdDqp1+v4AwFSiQSyopDP51FVO6lUMxOp1+vF4XCQz+eJ
+      x+PMLzz5qmk7SIXtIG12ZNBNYE0GNfQKelWnXCqiOTTyuSyGXqFQKHBj/DqWZRHpi7K81FyQ
+      q1TKhEK9GIZOOBzm2p1qjJVKme7ubmo1fctJhe1g71aRQbeNA6xx+SHD6ZkzZ6nX7440mVz+
+      vi8on2+qKLOzc/ddl88XnnhxbaMYjO1C1Zq1bhuNBoIgYJomNcPAMHRqtRqGrt85NqjXtq4C
+      thl0+XsZCHmYXliikC9ujgN88ctfZeLqBWxOLw5JZH5hgYGBPmRZ4dy5i7z2xTeYm7iKZfeS
+      TizT3xcmvpwnEpbIGw5yyWXCIT+z8ytYjQb5/N0tkSMjI6RSKdxuF7VaDVXTyGaydHd3k0wm
+      GT02ytmzHxIKBjAMgxdeOMrY2BgOhxPDMFhZWaGnJ4jmcDA1OUV/NIqhV1hdTeDzdePxeMjl
+      8ng8biYmJhkYGACa6bdtkowkCthVlUqljGlaKIpMuVxBVVXK5eao4nI50Y06kk1gfPwG4XCY
+      6elpAGYfsmIuiiKSLGO3q0iSjOZw4PF2IcsysqLc5yw2SaZea0Z73vt5484M8N5jh6by8m4b
+      E7du8N7Vh+9DXkOW7Q/UK/jMbgff/loPf/X9Vc5PlAFQun3s/fbvsvrhaebf/vef5fVoKaFQ
+      GMsq0NcXxn0wvDkOoGkaNUNnYPQYiZ/8C0dfeZ1SGYa7spw71zxv1CwCQY2+/b9I8eJbhIc+
+      i2DcosujsWfkBIXVOEfd3eSqRS5+3JRBbTYbfr8Pt9uNYeh4vV0sLS0yMjJCpVIhGo1SLDRV
+      E6/XS09PkEqlQn//AJZlIcsyo6MvUK/XSaczzM7McvjwYaZvT3Hk6FEEIJFIEgwEyRcKiKJI
+      MBjANE0URUGSVaqVEjabiMfjplqtIkkSbnezlFEsFmNpaQlN06jqeebnF3njjV/grbe+/6nP
+      y7Ks5n99/cF6Ap/kaSag+2NdHO3x0m3rZqb66RkpBEGk0bg/i9YXXmwwulviCy9qJBrN9BzK
+      UAzvgUNYltmWDlAupJmfn2XP8E5WFmc3RwXyer3kcjm6AiH0XBzZHSASCpJNLLGSzOH1Nv/L
+      xvbsJZ/JoOcToDgJ+n2gaFQLeXr8bpyBfq598D/kjAaHDx3kytVrnDx5krGxMXRdRxAE+vuj
+      LC4uMjQ0xNzcPJFImNvTcwT8XZimicvlJpfL4XK5SKVSSJKNcrlCLBZjfHyc2I5dlIp56vUa
+      xWKJ3bt3MzMzQ6PRoFwu43Q2Y/Q9Hg+iTSKbaU6mbTYR07z7wgSDAYrFEuVyGYfDwY6duxj7
+      +CIul4t0Ov3Q5/SzsBFVap70vpoi8sIuJxcmS1SNO30VBIJHjpGbuf3YQh+w+SrQpsugG0Un
+      GrS1NnRk0DanEw3aWhvaoW+tYNs4QCcatPU2tEPfNpqNiQYVbXR3PX3N2lDfIJoMLk8Xsu1u
+      jkOv1wOA5nKxtQMd7sepPv3jFu12RFnG69xOT2JjGdl/mGhvAE1r1pqWJAlRtGGTFVRFIhLp
+      w2azIYoCIODQVPYeOEKX074xI8BnXj6BWFklUbRwKxZ12U0+k6fPZ6MiODFKNkIBg1Jd5vql
+      i0Rie3HLDXqiUd79rwRfeePzfHD6JruGoGR6SC4v0tu/k96Qn3q+yMLyNJFoPyuLcQzLxBfs
+      pZIpEY75WJqZa9kus43k+D4n3zzZzVsfVTl/u4EkK+ty5aMQFIW9f/inHK9f5NfUn/Bn/zzH
+      v55+/MTyeUOvGXi9fRz97ABiw+Ty+QvsODgK9SpGuYrqcjMwFCO3OofkDOB12ZEUF4tT1zfG
+      AWampzj1hVfZYYCpJ8iaKoWSQLUS5+XXX+PKmfOoDheB0DCF5Sl6QhHc9jrxeJw6daZmVxnZ
+      EcWm5shmavh6goSjO6iWs1w4N8WXfvUV/MEotR+ewdMlERs9zsS5q5Szk3R19QLt7wBr2FUH
+      7i47oihhWZ8eBiLIMoIoIvD0GYBHRkbI5XKYpkk6nV6XeavVKqqqoutVNFWjplfRNA2Px0M8
+      HkdRFAYHB0mlUlQqFarVCopiR1bsmDVjfQ1BURTq9TqBQIBkMvnQMqTPCsu0MKwMM7dt5HJp
+      3JrG2PlzqA4PdqooTh+VYg6xUSdfWEHwu1iMT1KoGB0V6Fm2ddpFSrr1VPcV7XawmiPr46TK
+      e++7f/9+RFHE6/UQCoUoFAoEg0EWFhaw2SQ0TcPt8VApl+7IsAKnT5/m1KmTqKpKKpWmvz9K
+      LpdjfPwGI/v2US6VKJebKVl6Q73kCwUkycalS5fvW4zsqEAdHsray/80WHcWv3JPGfFQq9Ww
+      LAvLMkkkkhSLRUKhHhKJJIcPH+Ly5Sv0RftZmJ/D192NbjQjZZPJFLIssbqawDTrlMsV3G4X
+      6XSGbCaNx+uhWqkydukSAH6/H0nauvOTbTMCHDs2yqUr156orSzbqdUev6raLm0fhiAIqKqG
+      y+3B5fJgV5sScDaTZmX50WliBEFAFEVM02yLvu0b3r2pI8D/AVXoqcAD05h6AAAAAElFTkSu
+      QmCC
+    </thumbnail>
+  </thumbnails>
+</workbook>
